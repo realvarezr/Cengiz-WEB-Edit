@@ -2,15 +2,19 @@
 /**
  * Custom footer — Cengiz Gastro
  * Reemplaza footer.php del tema padre (Astra)
- *
- * PLACEHOLDERS a reemplazar:
- *   https://TU-URL-LOGO.png          → URL del logo en WP Media Library
- *   https://instagram.com/TUUSUARIO  → perfil de Instagram
- *   https://facebook.com/TUPAGINA    → página de Facebook
- *   /standorte/, /speisekarte/ etc.  → slugs reales de las páginas
- *   /impressum/, /datenschutz/       → URLs de páginas legales
  */
+astra_content_bottom();
 ?>
+    </div><!-- .ast-container -->
+  </div><!-- #content -->
+
+<?php
+astra_content_after();
+astra_footer_before();
+?>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
   <footer class="cg-footer" role="contentinfo">
 
     <div class="cg-footer__inner">
@@ -21,24 +25,10 @@
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
              class="cg-footer__logo-link"
              aria-label="Cengiz Gastro – Startseite">
-            <img src="https://TU-URL-LOGO.png"
+            <img src="https://cengiz-gastro.de/wp-content/uploads/2023/02/cropped-cropped-Logo-Cengiz-White@2560x.png"
                  alt="Cengiz Gastro"
                  class="cg-footer__logo">
           </a>
-          <div class="cg-footer__social">
-            <a href="https://instagram.com/TUUSUARIO"
-               target="_blank" rel="noopener"
-               class="cg-footer__social-icon"
-               aria-label="Cengiz Gastro auf Instagram">
-              <i class="fab fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a href="https://facebook.com/TUPAGINA"
-               target="_blank" rel="noopener"
-               class="cg-footer__social-icon"
-               aria-label="Cengiz Gastro auf Facebook">
-              <i class="fab fa-facebook-f" aria-hidden="true"></i>
-            </a>
-          </div>
         </div>
 
         <!-- Columna 2: Schnellzugang -->
@@ -46,20 +36,30 @@
           <h3 class="cg-footer__title">Schnellzugang</h3>
           <ul class="cg-footer__nav-list">
             <li><a href="/" class="cg-footer__nav-link">Startseite</a></li>
-            <li><a href="/standorte/" class="cg-footer__nav-link">Standorte</a></li>
-            <li><a href="/speisekarte/" class="cg-footer__nav-link">Speisekarte</a></li>
-            <li><a href="/ueber-uns/" class="cg-footer__nav-link">Über uns</a></li>
-            <li><a href="/kontakt/" class="cg-footer__nav-link">Kontakt</a></li>
+            <li><a href="https://cengiz-gastro.de/events/" class="cg-footer__nav-link">Events</a></li>
+            <li><a href="https://cengiz-gastro.de/kindergeburtstag/" class="cg-footer__nav-link">Kindergeburtstag</a></li>
+            <li><a href="https://cengiz-gastro.de/karriere/" class="cg-footer__nav-link">Karriere</a></li>
+            <li><a href="mailto:event@cengiz-gastro.de" class="cg-footer__nav-link">Kontakt</a></li>
           </ul>
         </div>
 
         <!-- Columna 3: Folge uns -->
         <div class="cg-footer__col">
           <h3 class="cg-footer__title">Folge uns</h3>
-          <p class="cg-footer__social-hint">
-            Aktuelle Angebote, Events<br>
-            und Impressionen aus dem Betrieb.
-          </p>
+          <div class="cg-footer__social">
+            <a href="https://www.instagram.com/cengiz.schwimmbadgastronomie/"
+               target="_blank" rel="noopener"
+               class="cg-footer__social-icon"
+               aria-label="Cengiz Gastro auf Instagram">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.facebook.com/entspannt.geniessen"
+               target="_blank" rel="noopener"
+               class="cg-footer__social-icon"
+               aria-label="Cengiz Gastro auf Facebook">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
 
       </div><!-- /.cg-footer__grid -->
@@ -87,6 +87,14 @@
 
   </footer>
 
-<?php wp_footer(); ?>
+<?php
+astra_footer_after();
+?>
+</div><!-- #page -->
+
+<?php
+astra_body_bottom();
+wp_footer();
+?>
 </body>
 </html>
