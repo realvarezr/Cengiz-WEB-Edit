@@ -1,0 +1,303 @@
+﻿<style>
+  /* =========================================
+     CG INFO SECTION — Elementor HTML Widget
+     Fuentes: Julius Sans One + Montserrat
+     (ya cargadas por el tema WordPress)
+  ========================================= */
+
+  .cg-info {
+    padding: 52px 32px;
+    box-sizing: border-box;
+  }
+
+  /* Grid principal: 3 columnas */
+  .cg-info__grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 0;
+    align-items: start;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  /* Separador vertical entre columnas */
+  .cg-info__col {
+    padding: 0 36px;
+  }
+
+  .cg-info__col:not(:last-child) {
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .cg-info__col:first-child {
+    padding-left: 0;
+  }
+
+  .cg-info__col:last-child {
+    padding-right: 0;
+  }
+
+  /* Título de columna */
+  .cg-info__title {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #99cc00;
+    margin: 0 0 22px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(153, 204, 0, 0.25);
+  }
+
+  /* Links */
+  .cg-info a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .cg-info a:hover {
+    color: #99cc00;
+  }
+
+  /* Texto general */
+  .cg-info__text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #cccccc;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ---- Columna Kontakt ---- */
+  .cg-info__contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .cg-info__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .cg-info__contact-icon {
+    color: #99cc00;
+    font-size: 1.05rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+  }
+
+  .cg-info__contact-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .cg-info__contact-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #99cc00;
+  }
+
+  .cg-info__contact-value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #cccccc;
+    line-height: 1.6;
+  }
+
+  /* ---- Columna Dokumente ---- */
+  .cg-info__docs {
+    display: flex;
+    justify-content: flex-start;
+    gap: 36px;
+  }
+
+  .cg-info__doc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .cg-info__doc-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border: 1.5px solid #99cc00;
+    border-radius: 50%;
+    color: #99cc00;
+    font-size: 1.6rem;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  }
+
+  .cg-info__doc:hover .cg-info__doc-icon {
+    background-color: #99cc00;
+    color: #2e2e2e;
+    transform: scale(1.08);
+    box-shadow: 0 0 18px rgba(153, 204, 0, 0.35);
+  }
+
+  .cg-info__doc-label {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aaaaaa;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .cg-info__doc:hover .cg-info__doc-label {
+    color: #99cc00;
+  }
+
+  /* ---- Responsive: tablet ---- */
+  @media (max-width: 860px) {
+    .cg-info__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .cg-info__col {
+      padding: 0;
+      border-right: none !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 28px;
+    }
+    .cg-info__col:last-child {
+      grid-column: 1 / -1;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  /* ---- Responsive: móvil ---- */
+  @media (max-width: 560px) {
+    .cg-info {
+      padding: 40px 20px;
+    }
+    .cg-info__grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .cg-info__col:last-child {
+      grid-column: auto;
+    }
+    .cg-info__docs {
+      gap: 28px;
+    }
+  }
+</style>
+
+<div class="cg-info">
+  <div class="cg-info__grid">
+
+    <!-- Columna 1: Öffnungszeiten -->
+    <div class="cg-info__col">
+      <h3 class="cg-info__title">Öffnungszeiten</h3>
+      <ul class="cg-info__contact-list">
+        <li class="cg-info__contact-item">
+          <span class="cg-info__contact-icon">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+          </span>
+          <div class="cg-info__contact-body">
+            <span class="cg-info__contact-label">Freibad Biberach</span>
+            <span class="cg-info__contact-value">
+              Die aktuellen Öffnungszeiten<br>
+              können sich saisonal ändern.
+            </span>
+          </div>
+        </li>
+        <li class="cg-info__contact-item">
+          <span class="cg-info__contact-icon">
+            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+          </span>
+          <div class="cg-info__contact-body">
+            <span class="cg-info__contact-label">Aktuelle Zeiten</span>
+            <a class="cg-info__contact-value"
+               href="https://www.biberach-baden.de/pb/30149.html"
+               target="_blank" rel="noopener">
+              Waldterrassenbad Biberach
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Columna 2: Kontakt -->
+    <div class="cg-info__col">
+      <h3 class="cg-info__title">Kontakt</h3>
+      <ul class="cg-info__contact-list">
+        <li class="cg-info__contact-item">
+          <span class="cg-info__contact-icon">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </span>
+          <div class="cg-info__contact-body">
+            <span class="cg-info__contact-label">Email</span>
+            <a class="cg-info__contact-value" href="mailto:info@cengiz-gastro.de">
+              info@cengiz-gastro.de
+            </a>
+          </div>
+        </li>
+        <li class="cg-info__contact-item">
+          <span class="cg-info__contact-icon">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          </span>
+          <div class="cg-info__contact-body">
+            <span class="cg-info__contact-label">Adresse</span>
+            <span class="cg-info__contact-value">
+              Waldterrassenbad Biberach<br>
+              Jägerpfad 42, 77781 Biberach
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: Dokumente -->
+    <div class="cg-info__col">
+      <h3 class="cg-info__title">Dokumente</h3>
+      <div class="cg-info__docs">
+
+        <a class="cg-info__doc"
+           href="https://cengiz-gastro.de/wp-content/uploads/2025/08/Speisen-Getraenkekarte_Freibad_stand_08_205.pdf"
+           target="_blank" rel="noopener"
+           aria-label="Speisekarte als PDF öffnen">
+          <span class="cg-info__doc-icon">
+            <i class="fas fa-hamburger" aria-hidden="true"></i>
+          </span>
+          <span class="cg-info__doc-label">Speisekarte</span>
+        </a>
+
+        <a class="cg-info__doc"
+           href="https://cengiz-gastro.de/wp-content/uploads/2024/02/Allergene-Tabelle.pdf"
+           target="_blank" rel="noopener"
+           aria-label="Allergene-Tabelle als PDF öffnen">
+          <span class="cg-info__doc-icon">
+            <i class="fas fa-hand-holding-medical" aria-hidden="true"></i>
+          </span>
+          <span class="cg-info__doc-label">Allergene</span>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</div>
