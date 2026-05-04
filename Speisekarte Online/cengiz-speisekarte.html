@@ -1,0 +1,745 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cengiz – Speisekarte Offenburg</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/speisekarte.css">
+</head>
+<body>
+
+<header>
+  <div class="header-label">Offenburg</div>
+  <h1>Cengiz</h1>
+  <div class="header-sub">Gastronomie · Speisekarte</div>
+</header>
+
+<div class="legend">
+  <div class="legend-item"><span class="badge badge-v">V</span> Vegetarisch</div>
+  <div class="legend-item"><span class="badge badge-vg">VG</span> Vegan</div>
+  <div class="legend-item"><span class="badge badge-gf">GF</span> Glutenfrei</div>
+</div>
+
+<nav class="nav-tabs">
+  <div class="nav-tab active" onclick="showSection('burger')">Burger</div>
+  <div class="nav-tab" onclick="showSection('snacks')">Snacks</div>
+  <div class="nav-tab" onclick="showSection('flammkuchen')">Flammkuchen</div>
+  <div class="nav-tab" onclick="showSection('salate')">Salate</div>
+  <div class="nav-tab" onclick="showSection('bowls')">Bowls</div>
+  <div class="nav-tab" onclick="showSection('loadedfries')">Loaded Fries</div>
+  <div class="nav-tab" onclick="showSection('getraenke')">Getränke</div>
+  <div class="nav-tab" onclick="showSection('kaffee')">Kaffee</div>
+  <div class="nav-tab" onclick="showSection('suesses')">Süßes</div>
+</nav>
+
+<main>
+
+  <!-- BURGER & HAUPTGERICHTE -->
+  <div class="section active" id="burger">
+    <div class="cat-header"><h2>Burger & Hauptgerichte</h2><div class="cat-line"></div></div>
+    <div class="items-list">
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Crispy Chicken-Burger</span></div>
+          <div class="item-desc">Mit Tomate, Gurke, Zwiebeln & Pommes</div>
+          <div class="item-desc-fr">Chicken Burger avec des frites</div>
+        </div>
+        <div class="item-price">15,90 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Beef-Burger</span></div>
+          <div class="item-desc">Mit Tomate, Gurke, Käse, Zwiebeln & Pommes</div>
+          <div class="item-desc-fr">Beef-Burger avec des frites</div>
+        </div>
+        <div class="item-price">15,90 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Bacon-Beef Burger</span></div>
+          <div class="item-desc">Mit Bacon, Tomate, Gurke, Käse, Zwiebeln, BBQ-Sauce & Pommes</div>
+          <div class="item-desc-fr">Beef-Burger avec bacon & frites</div>
+        </div>
+        <div class="item-price">16,90 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Green-Oat Burger</span>
+            <span class="tag tag-v">V</span>
+          </div>
+          <div class="item-desc">Mit Tomate, Gurke, Zwiebeln, Mango Relish & Pommes</div>
+          <div class="item-desc-fr">Green Oat Burger avec des frites</div>
+        </div>
+        <div class="item-price">14,90 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Cordon Bleu</span></div>
+          <div class="item-desc">Mit Pommes & Salatbouquet</div>
+          <div class="item-desc-fr">Cordon Bleu avec frites et bouquet de salade</div>
+        </div>
+        <div class="item-price">17,90 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Putenschnitzel</span></div>
+          <div class="item-desc">Paniert mit Pommes</div>
+          <div class="item-desc-fr">L'escalope de dinde panée & frites</div>
+        </div>
+        <div class="item-price">14,90 €</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SNACKS -->
+  <div class="section" id="snacks">
+    <div class="cat-header"><h2>Snacks & Kleinigkeiten</h2><div class="cat-line"></div></div>
+    <div class="items-list">
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Baguette</span>
+            <span class="tag tag-v">V</span>
+          </div>
+          <div class="item-desc">Mit Schinken oder Salami, überbacken mit Käse</div>
+          <div class="item-desc-fr">Baguette chaud avec jambon ou salami, gratiné avec fromage</div>
+        </div>
+        <div class="item-price">7,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Pommes Frites</span>
+            <span class="tag tag-vg">VG</span>
+          </div>
+          <div class="item-desc">Mit Ketchup oder Mayo</div>
+          <div class="item-desc-fr">Frites avec Ketchup / Mayo</div>
+        </div>
+        <div class="item-price">4,00 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Extra Mayo / Ketchup</span></div>
+        </div>
+        <div class="item-price">0,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Currywurst mit Brötchen</span></div>
+          <div class="item-desc-fr">Saucisse au curry avec petit pain</div>
+        </div>
+        <div class="item-price">5,00 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Currywurst mit Pommes</span></div>
+          <div class="item-desc-fr">Saucisse au curry avec des frites</div>
+        </div>
+        <div class="item-price">8,90 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Bratwurst mit Pommes</span></div>
+          <div class="item-desc-fr">Saucisse knack grillée & frites</div>
+        </div>
+        <div class="item-price">8,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">6 Chicken-Nuggets</span></div>
+        </div>
+        <div class="item-price">5,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">6 Chicken-Nuggets mit Pommes</span></div>
+          <div class="item-desc-fr">6-Chicken-Nuggets avec des frites</div>
+        </div>
+        <div class="item-price">9,50 €</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FLAMMKUCHEN -->
+  <div class="section" id="flammkuchen">
+    <div class="cat-header"><h2>Flammkuchen</h2><div class="cat-line"></div></div>
+    <div class="items-list">
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Flammkuchen klassisch</span>
+            <span class="tag tag-v">V</span>
+          </div>
+          <div class="item-desc">Mit Zwiebeln, Speck, Käse</div>
+          <div class="item-desc-fr">Tarte flambée, oignon, bacon, fromage</div>
+        </div>
+        <div class="item-price">10,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Flammkuchen Gemüse</span>
+            <span class="tag tag-v">V</span>
+          </div>
+          <div class="item-desc">Mit Gemüse, Käse</div>
+          <div class="item-desc-fr">Tarte flambée, des légumes, fromage</div>
+        </div>
+        <div class="item-price">10,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Flammkuchen Lachs</span></div>
+          <div class="item-desc">Mit Lachs, Scampi und Lauch</div>
+          <div class="item-desc-fr">Tarte flambée, saumon, scampi, poireau</div>
+        </div>
+        <div class="item-price">11,50 €</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SALATE -->
+  <div class="section" id="salate">
+    <div class="cat-header"><h2>Salate</h2><div class="cat-line"></div></div>
+    <div class="items-list">
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Blattsalate</span>
+            <span class="tag tag-vg">VG</span>
+          </div>
+          <div class="item-desc">Mit Tomaten, Karotte, Gurke</div>
+          <div class="item-desc-fr">Salade mixte avec tomates, carotte, concombre</div>
+        </div>
+        <div class="item-price">12,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">+ Thunfisch und Zwiebeln</span></div>
+          <div class="item-desc-fr">+ thon & oignons</div>
+        </div>
+        <div class="item-price">13,90 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">+ Hirtenkäse</span>
+            <span class="tag tag-v">V</span>
+          </div>
+          <div class="item-desc-fr">+ Fromage du berger</div>
+        </div>
+        <div class="item-price">13,90 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">+ Äpfel und Walnüsse</span>
+            <span class="tag tag-vg">VG</span>
+          </div>
+          <div class="item-desc-fr">+ pommes & noix</div>
+        </div>
+        <div class="item-price">13,90 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">+ Hähnchenstreifen</span></div>
+          <div class="item-desc-fr">+ poulet</div>
+        </div>
+        <div class="item-price">15,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Toskana Salat</span></div>
+          <div class="item-desc">Blattsalate, Karotte, Gurke, verschiedene Antipasti</div>
+          <div class="item-desc-fr">Salade Toskana avec tomates, carotte, concombre, Antipasti</div>
+        </div>
+        <div class="item-price">14,90 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Strassburger Wurstsalat</span></div>
+          <div class="item-desc">Mit Brötchen</div>
+          <div class="item-desc-fr">Salade de servelas et fromage, avec petit pain</div>
+        </div>
+        <div class="item-price">10,50 €</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BOWLS -->
+  <div class="section" id="bowls">
+    <div class="cat-header"><h2>Bowls</h2><div class="cat-line"></div></div>
+    <div class="items-list">
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Buddha Bowl</span>
+            <span class="tag tag-vg">VG</span>
+          </div>
+          <div class="item-desc">Mit Quinoa, Edamame, rote Beete, schwarzem Sesam, Limette, Blattsalate</div>
+          <div class="item-desc-fr">Buddha Bowl avec quinoa, edamame, betteraves</div>
+        </div>
+        <div class="item-price">14,90 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Buddha Bowl Spicy Chicken</span></div>
+          <div class="item-desc">Mit Quinoa, Edamame, rote Beete, schwarzem Sesam, Limette, Blattsalate, dazu knusprige Hähnchenstreifen</div>
+          <div class="item-desc-fr">Buddha Bowl avec poulet croustillant et épicé</div>
+        </div>
+        <div class="item-price">16,90 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Bali Bowl</span>
+            <span class="tag tag-vg">VG</span>
+          </div>
+          <div class="item-desc">Mit Avocado, Mango, Paprika, rote Zwiebeln, Tomate, Gurke, Mais, Blattsalate, dazu ein hausgemachtes Avocado-Kräuter Dressing</div>
+          <div class="item-desc-fr">Bali Bowl avec avocat, mangue, poivron, oignons rouges, tomate, concombre, maïs, laitue, vinaigrette avocat-herbes</div>
+        </div>
+        <div class="item-price">14,90 €</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- LOADED FRIES -->
+  <div class="section" id="loadedfries">
+    <div class="cat-header"><h2>Loaded Fries</h2><div class="cat-line"></div></div>
+    <div class="items-list">
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Pulled Turkey & BBQ-Sauce</span></div>
+          <div class="item-desc-fr">avec pulled turkey et sauce BBQ</div>
+        </div>
+        <div class="item-price">10,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">„Tijuana Style"</span>
+            <span class="tag tag-v">V</span>
+          </div>
+          <div class="item-desc">Mit Guacamole, Sour Cream und Tomatensalsa</div>
+          <div class="item-desc-fr">avec guacamole, sour cream et salsa de tomates</div>
+        </div>
+        <div class="item-price">8,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Parmesan & Schnittlauch</span>
+            <span class="tag tag-v">V</span>
+          </div>
+          <div class="item-desc">Mit frisch geriebenem Parmesan</div>
+          <div class="item-desc-fr">avec parmesan fraîchement râpé et ciboulette</div>
+        </div>
+        <div class="item-price">7,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Chili Cheese & Jalapeños</span>
+            <span class="tag tag-v">V</span>
+          </div>
+          <div class="item-desc-fr">avec sauce chili cheese et jalapeños</div>
+        </div>
+        <div class="item-price">7,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Tomatensalsa</span>
+            <span class="tag tag-vg">VG</span>
+          </div>
+          <div class="item-desc-fr">avec salsa de tomates</div>
+        </div>
+        <div class="item-price">7,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Guacamole</span>
+            <span class="tag tag-vg">VG</span>
+          </div>
+          <div class="item-desc-fr">avec guacamole</div>
+        </div>
+        <div class="item-price">7,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Sour Cream & Schnittlauch</span>
+            <span class="tag tag-v">V</span>
+          </div>
+          <div class="item-desc-fr">avec sour cream et ciboulette</div>
+        </div>
+        <div class="item-price">7,50 €</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GETRÄNKE -->
+  <div class="section" id="getraenke">
+
+    <div class="cat-header"><h2>Alkoholfrei</h2><div class="cat-line"></div></div>
+    <div class="items-list">
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Mineralwasser / Stilles Wasser</span></div>
+          <div class="item-desc">0,5l</div>
+          <div class="item-desc-fr">Eau minérale / naturelle</div>
+        </div>
+        <div class="item-price">3,30 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Apfel- / Johannisbeerschorle</span></div>
+          <div class="item-desc">0,5l</div>
+          <div class="item-desc-fr">Jus de pommes ou groseille eau minérale</div>
+        </div>
+        <div class="item-price">3,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Top Fit</span></div>
+          <div class="item-desc">0,5l · Limonade isotonique</div>
+        </div>
+        <div class="item-price">3,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Coca-Cola / Coca-Cola Zero</span></div>
+          <div class="item-desc">0,5l</div>
+        </div>
+        <div class="item-price">4,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Sprite / Fanta / Cola-Mix</span></div>
+          <div class="item-desc">0,5l</div>
+        </div>
+        <div class="item-price">4,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Fuze Eistee</span></div>
+          <div class="item-desc">0,4l · Fuze thé glacé</div>
+        </div>
+        <div class="item-price">4,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Red Bull</span></div>
+          <div class="item-desc">0,25l · verschiedene Sorten</div>
+        </div>
+        <div class="item-price">3,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Fine Spritz – Wild Virgins</span></div>
+          <div class="item-desc">0,3l · Alkoholfrei</div>
+          <div class="item-desc-fr">Apéritif orange sans alcool</div>
+        </div>
+        <div class="item-price">6,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Erdinger Hefeweizen Alkoholfrei</span></div>
+          <div class="item-desc">0,5l</div>
+          <div class="item-desc-fr">Bière de blé sans alcool</div>
+        </div>
+        <div class="item-price">4,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Erdinger Helles / Weizenradler Alkoholfrei</span></div>
+          <div class="item-desc">0,33l</div>
+          <div class="item-desc-fr">Panaché de blé sans alcool</div>
+        </div>
+        <div class="item-price">3,50 €</div>
+      </div>
+    </div>
+
+    <div class="cat-header"><h2>Bier & Wein</h2><div class="cat-line"></div></div>
+    <div class="items-list">
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Pils</span></div>
+          <div class="item-desc">0,3l · Bière</div>
+        </div>
+        <div class="item-price">3,90 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Hefeweizen</span></div>
+          <div class="item-desc">0,5l · Bière blanche</div>
+        </div>
+        <div class="item-price">4,90 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Lager Bier</span></div>
+          <div class="item-desc">0,5l · Bière blonde</div>
+        </div>
+        <div class="item-price">4,90 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Radler</span></div>
+          <div class="item-desc">0,3l · Bière panachée</div>
+        </div>
+        <div class="item-price">3,90 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Desperados</span></div>
+          <div class="item-desc">0,33l</div>
+        </div>
+        <div class="item-price">4,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Rieslingschorle</span></div>
+          <div class="item-desc">0,25l · Vin blanc avec eau minérale</div>
+        </div>
+        <div class="item-price">4,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Prosecco – Scavy & Ray</span></div>
+          <div class="item-desc">0,2l</div>
+        </div>
+        <div class="item-price">5,50 €</div>
+      </div>
+    </div>
+
+    <div class="cat-header"><h2>Cocktails & Longdrinks</h2><div class="cat-line"></div></div>
+    <div class="items-list">
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Maracuja Sprizz</span></div>
+          <div class="item-desc">0,3l</div>
+        </div>
+        <div class="item-price">6,90 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Aperol Sprizz</span></div>
+          <div class="item-desc">0,3l</div>
+        </div>
+        <div class="item-price">7,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Rosé Sommerschorle</span></div>
+          <div class="item-desc">0,3l · Vin rosé avec eau minérale & menthe</div>
+        </div>
+        <div class="item-price">6,90 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Lillet Wild Berry</span></div>
+          <div class="item-desc">0,3l</div>
+        </div>
+        <div class="item-price">8,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Caipirinha / Mojito / Cuba Libre</span></div>
+          <div class="item-desc">0,3l</div>
+        </div>
+        <div class="item-price">8,90 €</div>
+      </div>
+    </div>
+
+    <div class="deposit-note">
+      <p>🍶 Pfand: Flaschen = 0,50 € · Teller, Tassen, Gläser, Holzbretter = 2,00 €</p>
+      <p>Veuillez noter nos taux de gage: Bouteilles = 0,50 € · Assiettes, Tasses, Verres, Planches = 2,00 €</p>
+    </div>
+  </div>
+
+  <!-- KAFFEE -->
+  <div class="section" id="kaffee">
+    <div class="cat-header"><h2>Kaffee & Heißgetränke</h2><div class="cat-line"></div></div>
+    <div class="items-list">
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Espresso</span></div>
+          <div class="item-desc-fr">Expresso</div>
+        </div>
+        <div class="item-price">2,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Espresso Macchiato</span></div>
+        </div>
+        <div class="item-price">3,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Kaffee</span></div>
+          <div class="item-desc-fr">Tasse de Café</div>
+        </div>
+        <div class="item-price">3,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Milchkaffee / Cappuccino</span></div>
+          <div class="item-desc-fr">Café au lait / Cappuccino</div>
+        </div>
+        <div class="item-price">3,90 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Latte Macchiato</span></div>
+        </div>
+        <div class="item-price">4,10 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Heiße Schokolade mit Sahne</span>
+            <span class="tag tag-v">V</span>
+          </div>
+          <div class="item-desc-fr">Chocolat chaud crémeux</div>
+        </div>
+        <div class="item-price">3,90 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Tee</span>
+            <span class="tag tag-vg">VG</span>
+          </div>
+          <div class="item-desc">Verschiedene Sorten</div>
+          <div class="item-desc-fr">Différentes sortes de thé</div>
+        </div>
+        <div class="item-price">3,00 €</div>
+      </div>
+    </div>
+
+    <div class="cat-header"><h2>Kalt-Kaffee-Spezialitäten</h2><div class="cat-line"></div></div>
+    <div class="items-list">
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Eiskaffee</span></div>
+          <div class="item-desc">0,3l · Mit Vanilleeis und Sahne</div>
+          <div class="item-desc-fr">Café glacé</div>
+        </div>
+        <div class="item-price">6,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Eisschokolade</span></div>
+          <div class="item-desc">0,3l · Mit Vanilleeis und Sahne</div>
+          <div class="item-desc-fr">Chocolat glacé</div>
+        </div>
+        <div class="item-price">6,50 €</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SÜSSES -->
+  <div class="section" id="suesses">
+    <div class="cat-header"><h2>Süßes & Desserts</h2><div class="cat-line"></div></div>
+    <div class="items-list">
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Kuchen</span>
+            <span class="tag tag-v">V</span>
+          </div>
+          <div class="item-desc">Wechselnde Auswahl</div>
+          <div class="item-desc-fr">Changer la sélection de gâteaux</div>
+        </div>
+        <div class="item-price">3,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Muffins</span></div>
+          <div class="item-desc">Milka® / Oreo® · Mit kakaohaltiger Fettglasur</div>
+          <div class="item-desc-fr">avec glaçage à base de cacao</div>
+        </div>
+        <div class="item-price">3,00 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row"><span class="item-name">Donuts</span></div>
+          <div class="item-desc">Milka® / Oreo® / Pink · Mit kakaohaltiger Fettglasur</div>
+          <div class="item-desc-fr">avec glaçage à base de cacao</div>
+        </div>
+        <div class="item-price">3,00 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-left">
+          <div class="item-name-row">
+            <span class="item-name">Joghurtbecher</span>
+            <span class="tag tag-v">V</span>
+          </div>
+          <div class="item-desc">Mit saisonalen Früchten</div>
+          <div class="item-desc-fr">Coupes de yaourt aux fruits de saison</div>
+        </div>
+        <div class="item-price">4,50 €</div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-logo">Cengiz</div>
+  <div>Alle Preise inkl. Service und MwSt.</div>
+  <div>Zu deklarationspflichtigen Allergenen und Zusatzstoffen geben wir Ihnen gerne Auskunft.</div>
+</footer>
+
+<script src="js/speisekarte.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cengiz – Menü verwalten</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-logo">Cengiz</div>
+    <div class="login-sub">Menü-Verwaltung</div>
+    <input type="text" id="login-user" placeholder="Benutzername" autocomplete="username">
+    <input type="password" id="login-pass" placeholder="Passwort" autocomplete="current-password">
+    <button class="login-btn" onclick="doLogin()">Anmelden</button>
+    <div class="login-error" id="login-error">❌ Falsches Passwort</div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+  <header>
+    <div class="header-left">
+      <div class="header-logo">Cengiz</div>
+      <div class="header-badge">Admin</div>
+    </div>
+    <button class="logout-btn" onclick="doLogout()">Abmelden</button>
+  </header>
+
+  <div class="toolbar">
+    <div class="toolbar-left">Speisekarte Offenburg &nbsp;·&nbsp; <strong id="item-count">0</strong> Gerichte</div>
+    <button class="export-btn" onclick="exportMenu()">
+      ⬇️ Menü exportieren
+    </button>
+  </div>
+
+  <main id="menu-editor"></main>
+</div>
+
+<!-- CONFIRM MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <h3>Gericht löschen?</h3>
+    <p id="modal-text">Möchten Sie dieses Gericht wirklich löschen?</p>
+    <div class="modal-btns">
+      <button class="modal-cancel" onclick="closeModal()">Abbrechen</button>
+      <button class="modal-confirm" onclick="confirmDelete()">Löschen</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
