@@ -11,19 +11,20 @@
 
 <header>
   <div class="header-label">Offenburg</div>
-  <h1>Cengiz</h1>
-  <div class="header-sub">Gastronomie · Speisekarte</div>
+  <img src="https://cengiz-gastro.de/wp-content/uploads/2023/02/cropped-cropped-Logo-Cengiz-White@2560x.png" alt="Cengiz" class="header-logo-img">
+  <div class="header-sub">Speisekarte</div>
 </header>
 
-<div class="legend">
-  <div class="legend-item"><span class="badge badge-v">V</span> Vegetarisch</div>
-  <div class="legend-item"><span class="badge badge-vg">VG</span> Vegan</div>
-  <div class="legend-item"><span class="badge badge-gf">GF</span> Glutenfrei</div>
+<div class="legend-fab">
+  <div class="legend-pill">
+    <span class="fab-badge badge-v" tabindex="0">V<span class="fab-tooltip">Vegetarisch</span></span>
+    <span class="fab-badge badge-vg" tabindex="0">VG<span class="fab-tooltip">Vegan</span></span>
+    <span class="fab-badge badge-gf" tabindex="0">GF<span class="fab-tooltip">Glutenfrei</span></span>
+  </div>
 </div>
 
 <nav class="nav-tabs">
-  <div class="nav-tab active" onclick="showSection('burger')">Burger</div>
-  <div class="nav-tab" onclick="showSection('snacks')">Snacks</div>
+  <div class="nav-tab active" onclick="showSection('speisen')">Speisen</div>
   <div class="nav-tab" onclick="showSection('flammkuchen')">Flammkuchen</div>
   <div class="nav-tab" onclick="showSection('salate')">Salate</div>
   <div class="nav-tab" onclick="showSection('bowls')">Bowls</div>
@@ -35,8 +36,8 @@
 
 <main>
 
-  <!-- BURGER & HAUPTGERICHTE -->
-  <div class="section active" id="burger">
+  <!-- SPEISEN -->
+  <div class="section active" id="speisen">
     <div class="cat-header"><h2>Burger & Hauptgerichte</h2><div class="cat-line"></div></div>
     <div class="items-list">
 
@@ -98,10 +99,7 @@
       </div>
 
     </div>
-  </div>
 
-  <!-- SNACKS -->
-  <div class="section" id="snacks">
     <div class="cat-header"><h2>Snacks & Kleinigkeiten</h2><div class="cat-line"></div></div>
     <div class="items-list">
 
@@ -734,7 +732,7 @@
 </main>
 
 <footer>
-  <div class="footer-logo">Cengiz</div>
+  <div class="footer-logo">Cengiz Events- und Schwimmbadgastronomie</div>
   <div>Alle Preise inkl. Service und MwSt.</div>
   <div>Zu deklarationspflichtigen Allergenen und Zusatzstoffen geben wir Ihnen gerne Auskunft.</div>
 </footer>

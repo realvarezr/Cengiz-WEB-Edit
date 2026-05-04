@@ -6,8 +6,8 @@ const CREDENTIALS = { user: 'cengiz', pass: 'menu2024' };
 const menuData = {
   sections: [
     {
-      id: 'burger',
-      title: 'Burger & Hauptgerichte',
+      id: 'speisen',
+      title: 'Speisen',
       items: [
         { id: 1, name: 'Crispy Chicken-Burger', desc: 'Mit Tomate, Gurke, Zwiebeln & Pommes', descFr: 'Chicken Burger avec des frites', price: '15,90', tag: '' },
         { id: 2, name: 'Beef-Burger', desc: 'Mit Tomate, Gurke, Käse, Zwiebeln & Pommes', descFr: 'Beef-Burger avec des frites', price: '15,90', tag: '' },
@@ -15,12 +15,6 @@ const menuData = {
         { id: 4, name: 'Green-Oat Burger', desc: 'Mit Tomate, Gurke, Zwiebeln, Mango Relish & Pommes', descFr: 'Green Oat Burger avec des frites', price: '14,90', tag: 'V' },
         { id: 5, name: 'Cordon Bleu', desc: 'Mit Pommes & Salatbouquet', descFr: 'Cordon Bleu avec frites et bouquet de salade', price: '17,90', tag: '' },
         { id: 6, name: 'Putenschnitzel', desc: 'Paniert mit Pommes', descFr: "L'escalope de dinde panée & frites", price: '14,90', tag: '' },
-      ]
-    },
-    {
-      id: 'snacks',
-      title: 'Snacks & Kleinigkeiten',
-      items: [
         { id: 7, name: 'Baguette', desc: 'Mit Schinken oder Salami, überbacken mit Käse', descFr: 'Baguette chaud avec jambon ou salami, gratiné avec fromage', price: '7,50', tag: '' },
         { id: 8, name: 'Pommes Frites', desc: 'Mit Ketchup oder Mayo', descFr: 'Frites avec Ketchup / Mayo', price: '4,00', tag: 'VG' },
         { id: 9, name: 'Extra Mayo / Ketchup', desc: '', descFr: '', price: '0,50', tag: '' },

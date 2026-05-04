@@ -23,7 +23,7 @@
   /* HEADER */
   header {
     background: var(--brown);
-    padding: 32px 20px 24px;
+    padding: 48px 30px 36px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -48,56 +48,101 @@
   }
   .header-label {
     font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
+    font-size: 17px;
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--green);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
   }
   header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 42px;
+    font-size: 63px;
     color: var(--white);
     letter-spacing: -1px;
     line-height: 1;
   }
+  .header-logo-img {
+    display: block;
+    margin: 0 auto;
+    height: 105px;
+    width: auto;
+    position: relative;
+    z-index: 1;
+  }
   .header-sub {
-    font-size: 13px;
+    font-size: 20px;
     color: rgba(255,255,255,0.55);
-    margin-top: 6px;
+    margin-top: 9px;
     letter-spacing: 1px;
   }
 
-  /* LEGEND */
-  .legend {
-    background: var(--cream-dark);
-    border-bottom: 1px solid rgba(90,50,23,0.1);
-    padding: 10px 20px;
+  /* LEGEND STICKY FAB */
+  .legend-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    z-index: 500;
     display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
   }
-  .legend-item {
+  .legend-pill {
     display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 12px;
-    color: var(--text-muted);
-    font-weight: 500;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
   }
-  .badge {
+  .fab-badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 20px; height: 20px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 700;
-    flex-shrink: 0;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    position: relative;
+    transition: transform 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
   }
-  .badge-v { background: var(--green); color: white; }
+  .fab-badge:hover,
+  .fab-badge:focus { transform: scale(1.12); }
+  .fab-badge.badge-v  { background: #80BA27; }
+  .fab-badge.badge-vg { background: #4caf50; }
+  .fab-badge.badge-gf { background: #ff9800; }
+
+  .fab-tooltip {
+    position: absolute;
+    right: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%) scale(0.85);
+    background: rgba(42,26,10,0.92);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .fab-badge:hover .fab-tooltip,
+  .fab-badge:focus .fab-tooltip {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+
+  /* keep old .badge classes for any remaining references */
+  .badge { display: inline-flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; border-radius: 50%; font-size: 15px; font-weight: 700; flex-shrink: 0; }
+  .badge-v  { background: #80BA27; color: white; }
   .badge-vg { background: #4caf50; color: white; }
   .badge-gf { background: #ff9800; color: white; }
 
@@ -106,8 +151,8 @@
     display: flex;
     overflow-x: auto;
     background: var(--brown);
-    padding: 0 12px;
-    gap: 2px;
+    padding: 0 18px;
+    gap: 3px;
     scrollbar-width: none;
     position: sticky;
     top: 0;
@@ -116,13 +161,13 @@
   .nav-tabs::-webkit-scrollbar { display: none; }
   .nav-tab {
     flex-shrink: 0;
-    padding: 12px 16px;
-    font-size: 12px;
+    padding: 18px 24px;
+    font-size: 18px;
     font-weight: 500;
     letter-spacing: 0.5px;
     color: rgba(255,255,255,0.55);
     cursor: pointer;
-    border-bottom: 3px solid transparent;
+    border-bottom: 4px solid transparent;
     transition: all 0.2s;
     white-space: nowrap;
     text-transform: uppercase;
@@ -133,7 +178,7 @@
   }
 
   /* MAIN CONTENT */
-  main { padding: 0 0 60px; }
+  main { padding: 0 0 90px; }
 
   .section {
     display: none;
@@ -148,14 +193,14 @@
 
   /* CATEGORY HEADER */
   .cat-header {
-    padding: 28px 20px 8px;
+    padding: 42px 30px 12px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 18px;
   }
   .cat-header h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 24px;
+    font-size: 36px;
     color: var(--brown);
     line-height: 1;
   }
@@ -167,17 +212,17 @@
   }
 
   /* MENU ITEMS */
-  .items-list { padding: 4px 16px 8px; }
+  .items-list { padding: 6px 24px 12px; }
 
   .menu-item {
     background: var(--white);
-    border-radius: 14px;
-    padding: 14px 16px;
-    margin-bottom: 10px;
+    border-radius: 21px;
+    padding: 21px 24px;
+    margin-bottom: 15px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 12px;
+    gap: 18px;
     box-shadow: 0 1px 4px rgba(90,50,23,0.06);
     transition: box-shadow 0.2s, transform 0.2s;
     position: relative;
@@ -187,7 +232,7 @@
     content: '';
     position: absolute;
     left: 0; top: 0; bottom: 0;
-    width: 3px;
+    width: 5px;
     background: var(--green);
     opacity: 0;
     transition: opacity 0.2s;
@@ -202,24 +247,24 @@
   .item-name-row {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 9px;
     flex-wrap: wrap;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
   .item-name {
     font-weight: 500;
-    font-size: 15px;
+    font-size: 23px;
     color: var(--text);
     line-height: 1.2;
   }
   .item-desc {
-    font-size: 12.5px;
+    font-size: 19px;
     color: var(--text-muted);
     line-height: 1.4;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
   }
   .item-desc-fr {
-    font-size: 11.5px;
+    font-size: 17px;
     color: #bbb;
     font-style: italic;
     line-height: 1.3;
@@ -227,7 +272,7 @@
 
   .item-price {
     font-family: 'Playfair Display', serif;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 700;
     color: var(--brown);
     white-space: nowrap;
@@ -240,9 +285,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 18px; height: 18px;
+    width: 27px; height: 27px;
     border-radius: 50%;
-    font-size: 9px;
+    font-size: 14px;
     font-weight: 700;
     flex-shrink: 0;
   }
@@ -252,30 +297,74 @@
 
   /* DEPOSIT NOTE */
   .deposit-note {
-    margin: 16px 16px 0;
+    margin: 24px 24px 0;
     background: var(--cream-dark);
-    border-radius: 10px;
-    padding: 12px 14px;
-    font-size: 12px;
+    border-radius: 15px;
+    padding: 18px 21px;
+    font-size: 18px;
     color: var(--text-muted);
-    border-left: 3px solid var(--green);
+    border-left: 5px solid var(--green);
   }
-  .deposit-note p { margin-bottom: 3px; }
+  .deposit-note p { margin-bottom: 5px; }
   .deposit-note p:last-child { margin-bottom: 0; }
 
   /* FOOTER */
   footer {
     text-align: center;
-    padding: 20px;
-    font-size: 11.5px;
+    padding: 30px;
+    font-size: 17px;
     color: var(--text-muted);
     border-top: 1px solid var(--cream-dark);
-    margin-top: 20px;
+    margin-top: 30px;
     line-height: 1.6;
   }
   .footer-logo {
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-size: 27px;
     color: var(--brown);
-    margin-bottom: 6px;
+    margin-bottom: 9px;
+  }
+
+  /* ── DESKTOP ─────────────────────────────────────────────── */
+  @media (min-width: 768px) {
+    header h1 { font-size: 90px; }
+    .header-logo-img { height: 150px; }
+    .header-label { font-size: 20px; }
+    .header-sub { font-size: 23px; }
+
+    .legend { padding: 21px 30px; }
+    .legend-item { font-size: 21px; }
+    .badge { width: 36px; height: 36px; font-size: 17px; }
+
+    .nav-tabs { justify-content: center; padding: 0 36px; }
+    .nav-tab { font-size: 20px; padding: 21px 33px; }
+
+    main {
+      max-width: 1290px;
+      margin: 0 auto;
+      padding: 0 0 120px;
+    }
+
+    .cat-header { padding: 54px 12px 18px; }
+    .cat-header h2 { font-size: 45px; }
+
+    .items-list { padding: 12px 0 24px; }
+
+    .menu-item {
+      padding: 27px 33px;
+      margin-bottom: 21px;
+      border-radius: 27px;
+    }
+
+    .item-name { font-size: 26px; }
+    .item-desc { font-size: 21px; }
+    .item-desc-fr { font-size: 20px; }
+    .item-price { font-size: 29px; }
+
+    .tag { width: 33px; height: 33px; font-size: 15px; }
+
+    .deposit-note { font-size: 20px; padding: 21px 27px; }
+
+    footer { font-size: 20px; padding: 42px 30px; }
+    .footer-logo { font-size: 33px; }
   }
