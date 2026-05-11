@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cengiz – Speisekarte</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Raleway:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+  <!-- Estado de carga -->
+  <div id="loading-state" class="state-screen">
+    <div class="loading-dot"></div>
+  </div>
+
+  <!-- Error / menú no disponible -->
+  <div id="error-state" class="state-screen" style="display:none">
+    <div class="state-icon">📋</div>
+    <div class="state-title">Menü nicht verfügbar</div>
+    <div class="state-text">Dieses Menü ist momentan nicht verfügbar.</div>
+  </div>
+
+  <!-- Menú público -->
+  <div id="menu-app" style="display:none">
+    <header>
+      <div class="header-label" id="header-location"></div>
+      <h1>Cengiz</h1>
+      <div class="header-sub">Gastronomie · Speisekarte</div>
+    </header>
+
+    <div class="legend">
+      <div class="legend-item"><span class="badge" style="background:#80BA27;color:white;">V</span> Vegetarisch</div>
+      <div class="legend-item"><span class="badge" style="background:#4caf50;color:white;">VG</span> Vegan</div>
+      <div class="legend-item"><span class="badge" style="background:#ff9800;color:white;">GF</span> Glutenfrei</div>
+    </div>
+
+    <nav class="nav-tabs" id="nav-tabs"></nav>
+
+    <main id="menu-sections"></main>
+
+    <footer>
+      <div class="footer-logo">Cengiz</div>
+      <div>Alle Preise inkl. Service und MwSt.</div>
+      <div>Zu deklarationspflichtigen Allergenen und Zusatzstoffen geben wir Ihnen gerne Auskunft.</div>
+      <div style="margin-top:6px;font-size:10.5px;">🍶 Pfand: Flaschen 0,50 € · Teller, Tassen, Gläser, Holzbretter 2,00 €</div>
+    </footer>
+  </div>
+
+  <script type="module" src="menu.js"></script>
+</body>
+</html>

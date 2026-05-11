@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cengiz · Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<!-- ─── LOGIN ─────────────────────────────────────────────── -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">Cengiz</div>
+    <div class="login-subtitle">Menü Administration</div>
+    <input type="email" id="login-email" placeholder="E-Mail" autocomplete="email">
+    <input type="password" id="login-pass" placeholder="Passwort" autocomplete="current-password">
+    <button id="login-btn" onclick="doLogin()">Anmelden</button>
+    <div id="login-error" class="login-error"></div>
+  </div>
+</div>
+
+<!-- ─── HOME ──────────────────────────────────────────────── -->
+<div id="home-screen" style="display:none">
+  <header class="app-header">
+    <div class="header-brand">
+      <span class="brand-name">Cengiz</span>
+      <span class="brand-sub">· Menü Admin</span>
+    </div>
+    <button class="btn-ghost" onclick="doLogout()">Abmelden</button>
+  </header>
+  <main class="home-main">
+    <div class="home-toolbar">
+      <h2 class="home-title">Menüs</h2>
+      <div class="home-actions">
+        <button class="btn-primary" onclick="showCreateModal('branch')">+ Neue Filiale</button>
+        <button class="btn-secondary" onclick="showCreateModal('event')">+ Neues Event</button>
+      </div>
+    </div>
+    <div id="menus-list" class="menus-list"></div>
+  </main>
+</div>
+
+<!-- ─── EDITOR ────────────────────────────────────────────── -->
+<div id="editor-screen" style="display:none">
+  <header class="app-header">
+    <button class="btn-ghost" onclick="showHome()">← Zurück</button>
+    <div class="editor-title-wrap">
+      <span id="editor-title" class="editor-title"></span>
+      <span id="editor-type-badge" class="type-badge"></span>
+    </div>
+    <div class="editor-meta">
+      <span id="item-count">0</span> Gerichte
+      <span id="save-indicator" class="save-indicator"></span>
+    </div>
+  </header>
+  <div class="editor-toolbar">
+    <button class="btn-secondary btn-sm" onclick="showCopyModal()">↓ Von anderer Filiale kopieren</button>
+  </div>
+  <main id="menu-editor" class="menu-editor"></main>
+</div>
+
+<!-- ─── MODAL: CREAR ──────────────────────────────────────── -->
+<div id="create-modal" class="modal-backdrop" style="display:none">
+  <div class="modal-card">
+    <div class="modal-title" id="create-modal-title">Neue Filiale</div>
+    <input type="text" id="create-name" class="modal-input" placeholder="Name (z.B. Freiburg)">
+    <div class="modal-label">Basis-Menü</div>
+    <select id="create-source" class="modal-select"></select>
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeCreateModal()">Abbrechen</button>
+      <button class="btn-primary" onclick="confirmCreate()">Erstellen</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL: COPIAR ─────────────────────────────────────── -->
+<div id="copy-modal" class="modal-backdrop" style="display:none">
+  <div class="modal-card">
+    <div class="modal-title">Von anderer Filiale kopieren</div>
+    <div class="modal-subtitle">⚠️ Das aktuelle Menü wird überschrieben.</div>
+    <select id="copy-source" class="modal-select"></select>
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeCopyModal()">Abbrechen</button>
+      <button class="btn-primary" onclick="confirmCopy()">Kopieren</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL: BORRAR GERICHT ─────────────────────────────── -->
+<div id="delete-modal" class="modal-backdrop" style="display:none">
+  <div class="modal-card">
+    <div class="modal-title">Gericht löschen</div>
+    <div class="modal-text" id="delete-modal-text"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeDeleteModal()">Abbrechen</button>
+      <button class="btn-danger" onclick="confirmDelete()">Löschen</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL: BORRAR MENÚ ────────────────────────────────── -->
+<div id="delete-menu-modal" class="modal-backdrop" style="display:none">
+  <div class="modal-card">
+    <div class="modal-title">Menü löschen</div>
+    <div class="modal-text" id="delete-menu-modal-text"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeDeleteMenuModal()">Abbrechen</button>
+      <button class="btn-danger" onclick="confirmDeleteMenu()">Löschen</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TOAST ─────────────────────────────────────────────── -->
+<div id="toast" class="toast"></div>
+
+<script type="module" src="admin.js"></script>
+</body>
+</html>
