@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview – CG Footer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Montserrat:wght@400;500&display=swap">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <style>
+    body { margin: 0; background: #2a2a2a; }
+  </style>
+</head>
+<body>
+
 <footer class="cg-footer" role="contentinfo">
 
   <div class="cg-footer__inner">
@@ -5,9 +21,7 @@
 
       <!-- Columna 1: Logo -->
       <div class="cg-footer__col">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"
-           class="cg-footer__logo-link"
-           aria-label="Cengiz Gastro – Startseite">
+        <a href="/" class="cg-footer__logo-link" aria-label="Cengiz Gastro – Startseite">
           <img src="https://cengiz-gastro.de/wp-content/uploads/2023/02/cropped-cropped-Logo-Cengiz-White@2560x.png"
                alt="Cengiz Gastro"
                class="cg-footer__logo">
@@ -19,9 +33,9 @@
         <h3 class="cg-footer__title">Schnellzugang</h3>
         <ul class="cg-footer__nav-list">
           <li><a href="/" class="cg-footer__nav-link">Startseite</a></li>
-          <li><a href="https://cengiz-gastro.de/events/" class="cg-footer__nav-link">Events</a></li>
-          <li><a href="https://cengiz-gastro.de/kindergeburtstag/" class="cg-footer__nav-link">Kindergeburtstag</a></li>
-          <li><a href="https://cengiz-gastro.de/karriere/" class="cg-footer__nav-link">Karriere</a></li>
+          <li><a href="/events/" class="cg-footer__nav-link">Events</a></li>
+          <li><a href="/kindergeburtstag/" class="cg-footer__nav-link">Kindergeburtstag</a></li>
+          <li><a href="/karriere/" class="cg-footer__nav-link">Karriere</a></li>
           <li><a href="mailto:event@cengiz-gastro.de" class="cg-footer__nav-link">Kontakt</a></li>
         </ul>
       </div>
@@ -52,7 +66,7 @@
   <div class="cg-footer__bar">
     <div class="cg-footer__bar-inner">
       <span class="cg-footer__bar-copy">
-        &copy; <?php echo date( 'Y' ); ?> Cengiz Gastro
+        &copy; 2026 Cengiz Gastro
       </span>
       <span class="cg-footer__bar-links">
         <a href="/impressum/">Impressum</a>
@@ -60,12 +74,14 @@
       </span>
       <span class="cg-footer__powered">
         Powered by
-        <a href="https://studio.am-itsolutions.de"
-           target="_blank" rel="noopener">
-          AM Solutions
+        <a href="https://studio.am-itsolutions.de" target="_blank" rel="noopener">
+          studio.am-itsolutions.de
         </a>
       </span>
     </div>
   </div>
 
 </footer>
+
+</body>
+</html>

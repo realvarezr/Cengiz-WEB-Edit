@@ -35,7 +35,8 @@ function renderMenu(data) {
     // Nav tab
     const tab = document.createElement('div');
     tab.className = `nav-tab${i === 0 ? ' active' : ''}`;
-    tab.textContent = sec.title.split('&')[0].trim();
+    const label = upperDE(sec.title.split('&')[0].trim());
+    tab.textContent = label;
     tab.addEventListener('click', () => showSection(sec.id, tab));
     navTabs.appendChild(tab);
 
@@ -45,7 +46,7 @@ function renderMenu(data) {
     section.id = sec.id;
     section.innerHTML = `
       <div class="cat-header">
-        <h2>${sec.title}</h2>
+        <h2>${upperDE(sec.title)}</h2>
         <div class="cat-line"></div>
       </div>
       <div class="items-list">
@@ -70,6 +71,10 @@ function renderMenu(data) {
   document.getElementById('menu-app').style.display      = 'block';
 }
 
+function upperDE(str) {
+  return str.replace(/ß/g, 'ẞ').toUpperCase();
+}
+
 function tagBadge(tag) {
   if (!tag) return '';
   const colors = { V: '#80BA27', VG: '#4caf50', GF: '#ff9800' };
@@ -83,3 +88,13 @@ function showSection(id, tab) {
   tab.classList.add('active');
   tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 }
+
+// Touch toggle para leyenda sticky
+document.addEventListener('DOMContentLoaded', () => {
+  const legend = document.getElementById('legend-sticky');
+  if (!legend) return;
+  legend.addEventListener('touchstart', e => {
+    e.preventDefault();
+    legend.classList.toggle('expanded');
+  }, { passive: false });
+});

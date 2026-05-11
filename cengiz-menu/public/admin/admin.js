@@ -109,7 +109,7 @@ const DEFAULT_SECTIONS = [
     ]
   },
   {
-    id: 'suesses', title: 'Süßes & Desserts',
+    id: 'suesses', title: 'Süẞes & Desserts',
     items: [
       { id: 66, name: 'Kuchen',                        desc: 'Wechselnde Auswahl',            descFr: 'Changer la sélection de gâteaux', price: '3,50', tag: 'V' },
       { id: 67, name: 'Muffins (Milka® / Oreo®)',      desc: 'Mit kakaohaltiger Fettglasur',  descFr: 'avec glaçage à base de cacao',    price: '3,00', tag: 'V' },
@@ -189,6 +189,9 @@ function loadMenusList() {
       return a.name.localeCompare(b.name);
     });
     renderMenusList();
+  }, err => {
+    console.error('Firestore onSnapshot error:', err);
+    showToast('⚠️ Fehler beim Laden: ' + err.message);
   });
 }
 
@@ -261,6 +264,8 @@ async function confirmCreate() {
     .replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss')
     .replace(/\s+/g,'-').replace(/[^a-z0-9-]/g,'');
 
+  if (!id) { showToast('⚠️ Ungültiger Name'); return; }
+
   let sections = [];
   if (source === 'demo') {
     sections = JSON.parse(JSON.stringify(DEFAULT_SECTIONS));
@@ -269,9 +274,14 @@ async function confirmCreate() {
     if (snap.exists()) sections = JSON.parse(JSON.stringify(snap.data().sections || []));
   }
 
-  await setDoc(doc(db, 'menus', id), { name, type: pendingCreateType, active: true, sections });
-  closeCreateModal();
-  showToast(`✅ "${name}" erstellt`);
+  try {
+    await setDoc(doc(db, 'menus', id), { name, type: pendingCreateType, active: true, sections });
+    closeCreateModal();
+    showToast(`✅ "${name}" erstellt`);
+  } catch (e) {
+    console.error('Fehler beim Erstellen:', e);
+    showToast(`⚠️ Fehler: ${e.message}`);
+  }
 }
 
 // ─── BORRAR MENÚ ──────────────────────────────────────────────────────────────
@@ -332,7 +342,7 @@ function renderSection(sec) {
   block.id = 'block-' + sec.id;
   block.innerHTML = `
     <div class="cat-title-row">
-      <div class="cat-title">${sec.title}</div>
+      <input class="editable cat-title cat-title-input" value="${esc(sec.title)}" onchange="updateSectionTitle('${sec.id}', this.value)">
       <button class="add-item-btn" onclick="addItem('${sec.id}')">＋ Gericht hinzufügen</button>
     </div>
     <table class="menu-table">
@@ -376,6 +386,12 @@ function esc(str) {
 }
 
 // ─── CRUD ─────────────────────────────────────────────────────────────────────
+function updateSectionTitle(secId, value) {
+  const sec = (currentMenuData.sections || []).find(s => s.id === secId);
+  if (sec) sec.title = value;
+  scheduleSave();
+}
+
 function updateField(id, field, value) {
   (currentMenuData.sections || []).forEach(sec => {
     const item = sec.items.find(i => i.id === id);
