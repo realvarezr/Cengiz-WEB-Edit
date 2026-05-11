@@ -1,4 +1,6 @@
 ﻿
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Raleway:wght@300;400;600&display=swap');
+
   :root {
     --green: #80BA27;
     --green-dark: #6aa01f;
@@ -199,10 +201,11 @@
     gap: 18px;
   }
   .cat-header h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 36px;
     color: var(--brown);
     line-height: 1;
+    text-transform: uppercase;
   }
   .cat-line {
     flex: 1;
@@ -256,6 +259,7 @@
     font-size: 23px;
     color: var(--text);
     line-height: 1.2;
+    text-transform: uppercase;
   }
   .item-desc {
     font-size: 19px;
@@ -271,7 +275,7 @@
   }
 
   .item-price {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 24px;
     font-weight: 700;
     color: var(--brown);

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cengiz Gastro - Offenburg Menü</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --orange: #FF6600;
+            --dark-brown: #4e342e;
+            --grey-text: #333333;
+            --light-bg: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; background-color: var(--light-bg); color: var(--grey-text); }
+        
+        /* Header con Estilo Corporativo */
+        header { 
+            background: var(--dark-brown); 
+            color: var(--white); 
+            text-align: center; 
+            padding: 25px 15px; 
+            border-bottom: 5px solid #7cb342; /* El toque verde del menú físico */
+        }
+        .logo-font { font-family: 'Brush Script MT', cursive, sans-serif; font-size: 45px; margin: 0; }
+        .sub-header { font-size: 14px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.9; }
+
+        /* Navegación por pestañas */
+        .nav-container {
+            position: sticky; top: 0; z-index: 1000;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow-x: auto; display: flex;
+        }
+        .tab {
+            padding: 15px 20px; white-space: nowrap; font-weight: bold;
+            color: var(--grey-text); border-bottom: 3px solid transparent; cursor: pointer;
+        }
+        .tab.active { color: var(--orange); border-bottom: 3px solid var(--orange); }
+
+        /* Contenedor de platos */
+        .content { padding: 15px; max-width: 800px; margin: auto; }
+        .section-title { 
+            background: var(--dark-brown); color: white; padding: 10px 15px; 
+            border-radius: 5px; margin-top: 25px; display: flex; justify-content: space-between;
+        }
+        
+        .menu-item {
+            background: var(--white); margin: 10px 0; padding: 15px; border-radius: 8px;
+            display: flex; justify-content: space-between; align-items: flex-start;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .item-info { flex: 1; padding-right: 10px; }
+        .item-name { font-weight: bold; font-size: 16px; text-transform: uppercase; display: block; }
+        .item-desc { font-size: 13px; color: #666; font-style: italic; margin-top: 4px; line-height: 1.3; }
+        .item-price { font-weight: bold; color: var(--orange); font-size: 17px; min-width: 70px; text-align: right; }
+
+        /* Etiquetas */
+        .tag { font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-left: 5px; vertical-align: middle; }
+        .tag-v { background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; } /* Vegan/Vegi */
+
+        /* Info de Pfand */
+        .pfand-box {
+            background: #fff; border: 2px solid #7cb342; padding: 15px; 
+            margin: 30px 0; border-radius: 10px; font-size: 13px; text-align: center;
+        }
+
+        footer { text-align: center; padding: 30px; color: #888; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="logo-font">Speisen & Getränke</h1>
+    <div class="sub-header">Cengiz Gastro - Offenburg</div>
+</header>
+
+<div class="nav-container" id="tabs">
+    <div class="tab active" onclick="showCat('main')">Speisen</div>
+    <div class="tab" onclick="showCat('salate')">Salate & Bowls</div>
+    <div class="tab" onclick="showCat('fries')">Loaded Fries</div>
+    <div class="tab" onclick="showCat('drinks')">Kaltgetränke</div>
+    <div class="tab" onclick="showCat('hot')">Heiß & Kuchen</div>
+</div>
+
+<div class="content">
+
+    <!-- SECCIÓN SPEISEN -->
+    <div id="main" class="cat-section">
+        <div class="section-title"><span>Burgers & Snaks</span> <i class="fas fa-hamburger"></i></div>
+        
+        <div class="menu-item">
+            <div class="item-info">
+                <span class="item-name">Crispy Chicken-Burger</span>
+                <span class="item-desc">mit Tomate, Gurke, Zwiebeln & Pommes<br>Chicken Burger avec des frites</span>
+            </div>
+            <div class="item-price">15,90 €</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <span class="item-name">Beef-Burger</span>
+                <span class="item-desc">mit Tomate, Gurke, Käse, Zwiebeln & Pommes</span>
+            </div>
+            <div class="item-price">15,90 €</div>
+        </div>
+
+        <div class="menu-item">
+            <div class="item-info">
+                <span class="item-name">Green-Oat Burger <span class="tag tag-v">VEGI</span></span>
+                <span class="item-desc">mit Tomate, Gurke, Zwiebeln, Mango Relish & Pommes</span>
+            </div>
+            <div class="item-price">14,90 €</div>
+        </div>
+
+        <div class="section-title"><span>Klassiker</span> <i class="fas fa-utensils"></i></div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Cordon Bleu</span><span class="item-desc">mit Pommes & Salatbouquet</span></div>
+            <div class="item-price">17,90 €</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Currywurst mit Pommes</span></div>
+            <div class="item-price">8,90 €</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Flammkuchen (Speck/Zwiebeln)</span></div>
+            <div class="item-price">10,50 €</div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN SALATE & BOWLS -->
+    <div id="salate" class="cat-section" style="display:none">
+        <div class="section-title"><span>Salate & Bowls</span> <i class="fas fa-seedling"></i></div>
+        <div class="menu-item">
+            <div class="item-info">
+                <span class="item-name">Buddha Bowl <span class="tag tag-v">VEGAN</span></span>
+                <span class="item-desc">Quinoa, Edamame, rote Beete, Sesam, Limette, Blattsalate</span>
+            </div>
+            <div class="item-price">14,90 €</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Bali Bowl</span><span class="item-desc">Avocado, Mango, Paprika, rote Zwiebeln, Dressing</span></div>
+            <div class="item-price">14,90 €</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Toskana Salat</span><span class="item-desc">Blattsalate, Karotte, Gurke, Antipasti</span></div>
+            <div class="item-price">14,90 €</div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN LOADED FRIES -->
+    <div id="fries" class="cat-section" style="display:none">
+        <div class="section-title"><span>Loaded Fries</span> <i class="fas fa-fries-line"></i></div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Pulled Turkey & BBQ</span></div>
+            <div class="item-price">10,50 €</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Tijuana Style</span><span class="item-desc">Guacamole, Sour Cream, Tomatensalsa</span></div>
+            <div class="item-price">8,50 €</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Chili Cheese Sauce & Jalapeños</span></div>
+            <div class="item-price">7,50 €</div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN BEBIDAS -->
+    <div id="drinks" class="cat-section" style="display:none">
+        <div class="section-title"><span>Softdrinks</span> <i class="fas fa-glass-water"></i></div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Cola / Zero / Fanta / Sprite</span><span class="item-desc">0,5l</span></div>
+            <div class="item-price">4,00 €</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Mineralwasser</span><span class="item-desc">0,5l</span></div>
+            <div class="item-price">3,30 €</div>
+        </div>
+        
+        <div class="section-title"><span>Biere & Spritz</span> <i class="fas fa-beer"></i></div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Pils / Radler</span><span class="item-desc">0,3l</span></div>
+            <div class="item-price">3,90 €</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Aperol Sprizz</span><span class="item-desc">0,3l</span></div>
+            <div class="item-price">7,50 €</div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN CALIENTES Y PASTELES -->
+    <div id="hot" class="cat-section" style="display:none">
+        <div class="section-title"><span>Heißgetränke</span> <i class="fas fa-coffee"></i></div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Cappuccino / Milchkaffee</span></div>
+            <div class="item-price">3,90 €</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Latte Macchiato</span></div>
+            <div class="item-price">4,10 €</div>
+        </div>
+
+        <div class="section-title"><span>Kuchen & Co</span> <i class="fas fa-cookie"></i></div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Kuchen (verschiedene Sorten)</span></div>
+            <div class="item-price">3,50 €</div>
+        </div>
+        <div class="menu-item">
+            <div class="item-info"><span class="item-name">Muffins / Donuts</span></div>
+            <div class="item-price">3,00 €</div>
+        </div>
+    </div>
+
+    <!-- INFO DE DEPÓSITO (PFAND) -->
+    <div class="pfand-box">
+        <strong>Pfandsätze / Veuillez noter nos taux de gage</strong><br>
+        Flaschen / Bouteilles = <span style="color:var(--orange)">0,50€</span><br>
+        Teller, Tassen, Gläser, Holzbretter = <span style="color:var(--orange)">2,00€</span>
+    </div>
+
+</div>
+
+<footer>
+    <p>Alle Preise inkl. Service und MwSt.<br>
+    Cengiz Gastro Offenburg © 2024</p>
+</footer>
+
+<script>
+    function showCat(id) {
+        // Ocultar todas las secciones
+        document.querySelectorAll('.cat-section').forEach(s => s.style.display = 'none');
+        // Mostrar la seleccionada
+        document.getElementById(id).style.display = 'block';
+        // Gestionar tabs activas
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+        // Scroll suave hacia arriba al cambiar
+        window.scrollTo({top: 150, behavior: 'smooth'});
+    }
+</script>
+
+</body>
+</html>

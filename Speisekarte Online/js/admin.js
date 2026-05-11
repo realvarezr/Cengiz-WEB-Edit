@@ -128,12 +128,52 @@ const menuData = {
 let nextId = 100;
 let pendingDeleteRow = null;
 let pendingDeleteSection = null;
+const MENU_STORAGE_KEY = 'cengiz_menu_data_v1';
+
+function recalcNextId() {
+  const maxId = menuData.sections.reduce((max, sec) => {
+    const secMax = sec.items.reduce((m, item) => Math.max(m, item.id || 0), 0);
+    return Math.max(max, secMax);
+  }, 0);
+  nextId = maxId + 1;
+}
+
+function saveMenuData() {
+  try {
+    localStorage.setItem(MENU_STORAGE_KEY, JSON.stringify(menuData.sections));
+  } catch (err) {
+    console.warn('Menu data could not be saved to localStorage.', err);
+  }
+}
+
+function loadMenuData() {
+  try {
+    const raw = localStorage.getItem(MENU_STORAGE_KEY);
+    if (!raw) {
+      recalcNextId();
+      return;
+    }
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) {
+      recalcNextId();
+      return;
+    }
+    menuData.sections = parsed;
+    recalcNextId();
+  } catch (err) {
+    console.warn('Stored menu data is invalid. Using defaults.', err);
+    recalcNextId();
+  }
+}
+
+loadMenuData();
 
 // ─── LOGIN ──────────────────────────────────────────────────
 function doLogin() {
   const u = document.getElementById('login-user').value.trim();
   const p = document.getElementById('login-pass').value.trim();
   if (u === CREDENTIALS.user && p === CREDENTIALS.pass) {
+    loadMenuData();
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('app').style.display = 'block';
     renderAll();
@@ -223,6 +263,7 @@ function updateField(id, field, value) {
     const item = sec.items.find(i => i.id === id);
     if (item) item[field] = value;
   });
+  saveMenuData();
   updateCount();
 }
 
@@ -236,6 +277,7 @@ function addItem(secId) {
   const row = document.getElementById('row-' + newItem.id);
   row.querySelector('input').focus();
   row.querySelector('input').select();
+  saveMenuData();
   updateCount();
   showToast('✅ Gericht hinzugefügt');
 }
@@ -259,6 +301,7 @@ function confirmDelete() {
   const row = document.getElementById('row-' + pendingDeleteRow);
   if (row) row.remove();
   closeModal();
+  saveMenuData();
   updateCount();
   showToast('🗑 Gericht gelöscht');
 }
@@ -292,6 +335,7 @@ function exportMenu() {
       item.tag = row.querySelector('select').value;
     });
   });
+  saveMenuData();
 
   const html = generateMenuHTML();
   const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
@@ -344,7 +388,7 @@ function generateMenuHTML() {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cengiz – Speisekarte Offenburg</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Raleway:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{--green:#80BA27;--green-dark:#6aa01f;--brown:#5A3217;--cream:#faf7f2;--cream-dark:#f0ebe0;--text:#2a1a0a;--text-muted:#7a6a55;--white:#ffffff;}
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -353,7 +397,7 @@ function generateMenuHTML() {
   header::before{content:'';position:absolute;top:-40px;left:-40px;width:160px;height:160px;background:var(--green);opacity:.12;border-radius:50%;}
   header::after{content:'';position:absolute;bottom:-60px;right:-20px;width:200px;height:200px;background:var(--green);opacity:.08;border-radius:50%;}
   .header-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:8px;}
-  header h1{font-family:'Playfair Display',serif;font-size:42px;color:#fff;letter-spacing:-1px;line-height:1;}
+  header h1{font-family:'Cormorant Garamond',serif;font-size:42px;color:#fff;letter-spacing:-1px;line-height:1;}
   .header-sub{font-size:13px;color:rgba(255,255,255,.55);margin-top:6px;letter-spacing:1px;}
   .legend{background:var(--cream-dark);border-bottom:1px solid rgba(90,50,23,.1);padding:10px 20px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
   .legend-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-muted);font-weight:500;}
@@ -367,18 +411,18 @@ function generateMenuHTML() {
   .section.active{display:block;}
   @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
   .cat-header{padding:28px 20px 8px;display:flex;align-items:center;gap:12px;}
-  .cat-header h2{font-family:'Playfair Display',serif;font-size:24px;color:var(--brown);line-height:1;}
+  .cat-header h2{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--brown);line-height:1;text-transform:uppercase;}
   .cat-line{flex:1;height:1px;background:linear-gradient(to right,var(--green),transparent);opacity:.4;}
   .items-list{padding:4px 16px 8px;}
   .menu-item{background:var(--white);border-radius:14px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;box-shadow:0 1px 4px rgba(90,50,23,.06);}
   .item-left{flex:1;min-width:0;}
   .item-name-row{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:3px;}
-  .item-name{font-weight:500;font-size:15px;color:var(--text);line-height:1.2;}
+  .item-name{font-weight:500;font-size:15px;color:var(--text);line-height:1.2;text-transform:uppercase;}
   .item-desc{font-size:12.5px;color:var(--text-muted);line-height:1.4;margin-bottom:3px;}
   .item-desc-fr{font-size:11.5px;color:#bbb;font-style:italic;line-height:1.3;}
-  .item-price{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--brown);white-space:nowrap;flex-shrink:0;padding-top:1px;}
+  .item-price{font-family:'Raleway',sans-serif;font-size:16px;font-weight:700;color:var(--brown);white-space:nowrap;flex-shrink:0;padding-top:1px;}
   footer{text-align:center;padding:20px;font-size:11.5px;color:var(--text-muted);border-top:1px solid var(--cream-dark);margin-top:20px;line-height:1.6;}
-  .footer-logo{font-family:'Playfair Display',serif;font-size:18px;color:var(--brown);margin-bottom:6px;}
+  .footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--brown);margin-bottom:6px;}
 </style>
 </head>
 <body>
