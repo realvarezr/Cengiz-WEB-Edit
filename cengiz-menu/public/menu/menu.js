@@ -35,7 +35,7 @@ function renderMenu(data) {
     // Nav tab
     const tab = document.createElement('div');
     tab.className = `nav-tab${i === 0 ? ' active' : ''}`;
-    tab.textContent = sec.title.split('&')[0].trim();
+    tab.textContent = fixTitle(sec.title).split('&')[0].trim();
     tab.addEventListener('click', () => showSection(sec.id, tab));
     navTabs.appendChild(tab);
 
@@ -45,7 +45,7 @@ function renderMenu(data) {
     section.id = sec.id;
     section.innerHTML = `
       <div class="cat-header">
-        <h2>${sec.title}</h2>
+        <h2>${fixTitle(sec.title)}</h2>
         <div class="cat-line"></div>
       </div>
       <div class="items-list">
@@ -70,10 +70,14 @@ function renderMenu(data) {
   document.getElementById('menu-app').style.display      = 'block';
 }
 
+function fixTitle(title) {
+  return (title || '').replace(/Süsses/g, 'Süßes');
+}
+
 function tagBadge(tag) {
   if (!tag) return '';
   const colors = { V: '#80BA27', VG: '#4caf50', GF: '#ff9800' };
-  return `<span style="background:${colors[tag]};color:white;display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;font-size:9px;font-weight:700;">${tag}</span>`;
+  return `<span class="item-tag-badge" style="--tag-color:${colors[tag]};">${tag}</span>`;
 }
 
 function showSection(id, tab) {
