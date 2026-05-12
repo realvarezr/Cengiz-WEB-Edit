@@ -31,3 +31,7 @@ export function createMenu(id, payload) {
 export function deleteMenu(menuId) {
   return deleteDoc(doc(db, 'menus', menuId));
 }
+
+export function updateMenuName(menuId, name) {
+  return updateDoc(doc(db, 'menus', menuId), { name });
+}

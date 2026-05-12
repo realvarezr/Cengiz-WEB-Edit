@@ -114,6 +114,31 @@
   </div>
 </div>
 
+<!-- ─── MODAL: RENOMBRAR MENÚ ─────────────────────────────── -->
+<div id="rename-menu-modal" class="modal-backdrop" style="display:none">
+  <div class="modal-card">
+    <div class="modal-title">Name ändern</div>
+    <input type="text" id="rename-menu-input" class="modal-input" placeholder="Neuer Name"
+           onkeydown="if(event.key==='Enter') confirmRename()">
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeRenameModal()">Abbrechen</button>
+      <button class="btn-primary" onclick="confirmRename()">Speichern</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL: BORRAR UNTERMENÜ ──────────────────────────── -->
+<div id="delete-section-modal" class="modal-backdrop" style="display:none">
+  <div class="modal-card">
+    <div class="modal-title">Untermenü löschen</div>
+    <div class="modal-text" id="delete-section-modal-text"></div>
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeDeleteSectionModal()">Abbrechen</button>
+      <button class="btn-danger" onclick="confirmDeleteSection()">Löschen</button>
+    </div>
+  </div>
+</div>
+
 <!-- ─── MODAL: NUEVO UNTERMENÜ ───────────────────────────── -->
 <div id="add-section-modal" class="modal-backdrop" style="display:none">
   <div class="modal-card">

@@ -4,12 +4,14 @@ import { setRefresh } from './features/editor-refresh.js';
 import { renderAll, renderMenusList } from './ui/render.js';
 import { markPending, saveNow } from './features/save.js';
 import { initSortables, destroySortables, moveSection, moveItem } from './features/reorder.js';
-import { addItem, updateField, updateSectionTitle, toggleActive } from './features/menu-crud.js';
+import { addItem, updateField, updateSectionTitle, toggleActive, copyMenuUrl } from './features/menu-crud.js';
 import { showScreen, showHome, askGoHome } from './ui/screens.js';
 import {
+  showRenameModal, closeRenameModal, confirmRename,
   showCreateModal, closeCreateModal, confirmCreate,
   askDeleteMenu, closeDeleteMenuModal, confirmDeleteMenu,
   askDelete, closeDeleteModal, confirmDelete,
+  askDeleteSection, closeDeleteSectionModal, confirmDeleteSection,
   showAddSectionModal, closeAddSectionModal, confirmAddSection,
   showCopyModal, closeCopyModal, confirmCopy,
   closeUnsavedModal, unsavedSaveAndLeave, unsavedDiscardAndLeave,
@@ -106,12 +108,14 @@ Object.assign(window, {
   doLogin, doLogout,
   showHome, showEditor, askGoHome,
   closeUnsavedModal, unsavedSaveAndLeave, unsavedDiscardAndLeave,
+  showRenameModal, closeRenameModal, confirmRename,
   showCreateModal, closeCreateModal, confirmCreate,
   showCopyModal, closeCopyModal, confirmCopy,
-  toggleActive,
+  toggleActive, copyMenuUrl,
   addItem, updateField, updateSectionTitle, saveNow,
   moveSection, moveItem,
   askDelete, closeDeleteModal, confirmDelete,
+  askDeleteSection, closeDeleteSectionModal, confirmDeleteSection,
   askDeleteMenu, closeDeleteMenuModal, confirmDeleteMenu,
   showAddSectionModal, closeAddSectionModal, confirmAddSection,
 });

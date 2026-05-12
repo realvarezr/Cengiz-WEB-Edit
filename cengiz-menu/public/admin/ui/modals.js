@@ -2,7 +2,7 @@ import { state } from '../state.js';
 import { esc, slugify } from '../utils/text.js';
 import { refresh } from '../features/editor-refresh.js';
 import { markPending, saveNow } from '../features/save.js';
-import { fetchMenu, createMenu, deleteMenu } from '../services/firebase-menus.js';
+import { fetchMenu, createMenu, deleteMenu, updateMenuName } from '../services/firebase-menus.js';
 import { DEFAULT_SECTIONS } from '../data/default-sections.js';
 import { showToast } from './toast.js';
 import { showHome } from './screens.js';
@@ -124,6 +124,56 @@ export function confirmAddSection() {
   refresh();
   markPending();
   showToast('✅ Untermenü hinzugefügt');
+}
+
+// ─── RENOMBRAR MENÚ ───────────────────────────────────────────────────────────
+export function showRenameModal(menuId, currentName) {
+  state.pendingRenameMenuId = menuId;
+  document.getElementById('rename-menu-input').value = currentName;
+  document.getElementById('rename-menu-modal').style.display = 'flex';
+  setTimeout(() => {
+    const input = document.getElementById('rename-menu-input');
+    input.focus();
+    input.select();
+  }, 50);
+}
+
+export function closeRenameModal() {
+  document.getElementById('rename-menu-modal').style.display = 'none';
+  state.pendingRenameMenuId = null;
+}
+
+export async function confirmRename() {
+  const name = document.getElementById('rename-menu-input').value.trim();
+  if (!name) { showToast('⚠️ Bitte einen Namen eingeben'); return; }
+  if (!state.pendingRenameMenuId) return;
+  await updateMenuName(state.pendingRenameMenuId, name);
+  closeRenameModal();
+  showToast('✅ Name aktualisiert');
+}
+
+// ─── BORRAR UNTERMENÜ ─────────────────────────────────────────────────────────
+export function askDeleteSection(secId, name) {
+  state.pendingDeleteSectionId = secId;
+  document.getElementById('delete-section-modal-text').textContent =
+    `„${name}" und alle Gerichte darin wirklich löschen?`;
+  document.getElementById('delete-section-modal').style.display = 'flex';
+}
+
+export function closeDeleteSectionModal() {
+  document.getElementById('delete-section-modal').style.display = 'none';
+  state.pendingDeleteSectionId = null;
+}
+
+export function confirmDeleteSection() {
+  if (!state.pendingDeleteSectionId) return;
+  state.currentMenuData.sections = state.currentMenuData.sections.filter(
+    s => s.id !== state.pendingDeleteSectionId
+  );
+  closeDeleteSectionModal();
+  refresh();
+  markPending();
+  showToast('🗑 Untermenü gelöscht');
 }
 
 // ─── COPIAR MENÚ ──────────────────────────────────────────────────────────────

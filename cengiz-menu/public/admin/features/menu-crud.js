@@ -33,3 +33,8 @@ export async function toggleActive(menuId, active) {
   await updateMenuActive(menuId, active);
   showToast(active ? '✅ Menü aktiviert' : '⏸ Menü deaktiviert');
 }
+
+export function copyMenuUrl(menuId) {
+  const url = `https://cengiz-menu.web.app/menu/?id=${menuId}`;
+  navigator.clipboard.writeText(url).then(() => showToast('📋 Link kopiert!'));
+}

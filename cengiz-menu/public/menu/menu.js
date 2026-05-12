@@ -45,7 +45,7 @@ function renderMenu(data) {
     section.id = sec.id;
     section.innerHTML = `
       <div class="cat-header">
-        <h2>${fixTitle(sec.title)}</h2>
+        <h2>${toUpperDE(fixTitle(sec.title))}</h2>
         <div class="cat-line"></div>
       </div>
       <div class="items-list">

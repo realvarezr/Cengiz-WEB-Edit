@@ -1,14 +1,14 @@
 ﻿:root {
-  --bg:          #0f0704;
-  --bg-2:        #1a0d06;
-  --gold:        #c9a060;
-  --gold-dark:   #a07840;
-  --gold-faint:  rgba(201,160,96,.10);
+  --bg:          #faf6ef;
+  --bg-2:        #ede5d4;
+  --gold:        #5A3217;
+  --gold-dark:   #3d1f0a;
+  --gold-faint:  rgba(90,50,23,.08);
   --green:       #80BA27;
   --brown:       #5A3217;
-  --cream:       #ede4d4;
-  --cream-muted: #a08870;
-  --divider:     rgba(201,160,96,.18);
+  --cream:       #1e0e05;
+  --cream-muted: #7a5c40;
+  --divider:     rgba(90,50,23,.15);
   --radius:      8px;
   --radius-sm:   6px;
 }
@@ -97,12 +97,11 @@ header {
 }
 
 .header-label {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 36px;
-  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
   color: var(--gold);
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  letter-spacing: 7px;
   line-height: 1;
 }
 
@@ -120,7 +119,7 @@ header {
   flex-direction: column;
   gap: 7px;
   padding: 10px 6px;
-  background: rgba(15,7,4,.94);
+  background: rgba(250,246,239,.96);
   border: 1px solid var(--divider);
   border-right: none;
   border-radius: 8px 0 0 8px;
@@ -189,10 +188,9 @@ header {
 .nav-tab {
   flex-shrink: 0;
   padding: 17px 20px;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
+  letter-spacing: 1.5px;
   color: var(--cream-muted);
   cursor: pointer;
   border-bottom: 2px solid transparent;
@@ -202,7 +200,7 @@ header {
 .nav-tab:hover { color: var(--cream); }
 .nav-tab.active {
   color: var(--gold);
-  border-bottom-color: var(--gold);
+  border-bottom-color: #eed521;
 }
 
 /* ─── SECCIONES ──────────────────────────────────────────── */
@@ -224,11 +222,10 @@ main { padding: 0 0 80px; }
   gap: 18px;
 }
 .cat-header h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 11px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 3.5px;
-  text-transform: uppercase;
+  letter-spacing: 2.5px;
   color: var(--gold);
   white-space: nowrap;
 }
@@ -243,7 +240,7 @@ main { padding: 0 0 80px; }
 
 .menu-item {
   padding: 20px 0;
-  border-bottom: 1px solid rgba(201,160,96,.12);
+  border-bottom: 1px solid var(--divider);
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -264,20 +261,20 @@ main { padding: 0 0 80px; }
 }
 
 .item-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 21px;
-  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 19px;
+  font-weight: 500;
   color: var(--cream);
   line-height: 1.2;
   letter-spacing: .1px;
 }
 
-.item-desc    { font-size: 14px; color: var(--cream-muted); line-height: 1.5; margin-bottom: 4px; }
-.item-desc-fr { font-size: 13px; color: rgba(160,136,112,.55); font-style: italic; line-height: 1.3; }
+.item-desc    { font-size: 15px; color: var(--cream-muted); line-height: 1.5; margin-bottom: 4px; }
+.item-desc-fr { font-size: 13px; color: rgba(90,50,23,.38); font-style: italic; line-height: 1.3; }
 
 .item-price {
   font-family: 'Raleway', sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
   color: var(--gold);
   white-space: nowrap;
@@ -324,11 +321,11 @@ footer {
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 720px) {
   header         { padding: 44px 20px 34px; }
-  .header-label  { font-size: 28px; }
-  .nav-tab       { padding: 15px 16px; font-size: 10px; letter-spacing: 1.4px; }
+  .header-label  { font-size: 22px; letter-spacing: 5px; }
+  .nav-tab       { padding: 15px 16px; font-size: 11px; letter-spacing: 1.2px; }
   .items-list    { padding: 0 20px 14px; }
   .cat-header    { padding: 36px 20px 14px; }
-  .item-name     { font-size: 19px; }
-  .item-desc     { font-size: 13px; }
+  .item-name     { font-size: 17px; }
+  .item-desc     { font-size: 14px; }
   .menu-item     { gap: 16px; }
 }

@@ -24,6 +24,7 @@ export function renderSection(sec, secIndex, secCount) {
         <button class="move-btn" onclick="moveSection('${sec.id}', -1)" ${secIndex === 0 ? 'disabled' : ''} title="Nach oben">↑</button>
         <button class="move-btn" onclick="moveSection('${sec.id}', 1)" ${secIndex === secCount - 1 ? 'disabled' : ''} title="Nach unten">↓</button>
         <button class="add-item-btn" onclick="addItem('${sec.id}')">＋ Gericht hinzufügen</button>
+        <button class="delete-section-btn" onclick="askDeleteSection('${sec.id}', '${esc(fixTitle(sec.title))}')" title="Untermenü löschen">🗑 Untermenü löschen</button>
       </div>
     </div>
     <table class="menu-table">
@@ -93,6 +94,8 @@ export function renderMenusList(allMenus) {
           <div class="toggle-track"></div>
           <div class="toggle-thumb"></div>
         </label>
+        <button class="btn-icon" onclick="copyMenuUrl('${m.id}')" title="Link kopieren">📋</button>
+        <button class="btn-icon" onclick="showRenameModal('${m.id}','${esc(m.name)}')" title="Name ändern">✏️</button>
         <button class="btn-secondary btn-sm" onclick="showEditor('${m.id}')">Bearbeiten</button>
         <button class="btn-icon" onclick="askDeleteMenu('${m.id}','${esc(m.name)}')" title="Menü löschen">🗑</button>
       </div>

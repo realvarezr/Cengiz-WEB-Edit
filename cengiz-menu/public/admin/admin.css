@@ -414,6 +414,21 @@ body {
 }
 .add-item-btn:hover { border-color: var(--green); color: var(--green); background: var(--green-faint); }
 
+.delete-section-btn {
+  background: none;
+  border: 2px dashed var(--red, #e53e3e);
+  color: var(--red, #e53e3e);
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all .15s;
+  opacity: .6;
+}
+.delete-section-btn:hover { opacity: 1; background: var(--red-faint, rgba(229,62,62,.08)); }
+
 .move-btn {
   background: var(--panel-2);
   border: 2px solid var(--border);
