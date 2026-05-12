@@ -24,7 +24,7 @@ function showError() {
 
 function renderMenu(data) {
   document.title = `Cengiz – ${data.name} · Speisekarte`;
-  document.getElementById('header-location').textContent = data.name;
+  document.getElementById('header-location').textContent = toUpperDE(data.name);
 
   const navTabs  = document.getElementById('nav-tabs');
   const sections = document.getElementById('menu-sections');
@@ -35,7 +35,7 @@ function renderMenu(data) {
     // Nav tab
     const tab = document.createElement('div');
     tab.className = `nav-tab${i === 0 ? ' active' : ''}`;
-    tab.textContent = fixTitle(sec.title).split('&')[0].trim();
+    tab.textContent = toUpperDE(fixTitle(sec.title).split('&')[0].trim());
     tab.addEventListener('click', () => showSection(sec.id, tab));
     navTabs.appendChild(tab);
 
