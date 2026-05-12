@@ -551,6 +551,8 @@ body {
 .modal-select option { background: var(--panel-2); }
 
 .modal-actions { display: flex; justify-content: flex-end; gap: 10px; padding-top: 6px; }
+.modal-card .btn-ghost { color: var(--text-muted); }
+.modal-card .btn-ghost:hover { color: var(--text); background: rgba(0,0,0,.06); }
 .modal-actions-column { flex-direction: column; align-items: stretch; }
 .modal-actions-column button { width: 100%; justify-content: center; text-align: center; }
 
