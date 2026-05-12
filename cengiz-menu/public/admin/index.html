@@ -45,7 +45,7 @@
 <!-- ─── EDITOR ────────────────────────────────────────────── -->
 <div id="editor-screen" style="display:none">
   <header class="app-header">
-    <button class="btn-ghost" onclick="showHome()">← Zurück</button>
+    <button class="btn-ghost" onclick="askGoHome()">← Zurück</button>
     <div class="editor-title-wrap">
       <span id="editor-title" class="editor-title"></span>
       <span id="editor-type-badge" class="type-badge"></span>
@@ -57,6 +57,8 @@
   </header>
   <div class="editor-toolbar">
     <button class="btn-secondary btn-sm" onclick="showCopyModal()">↓ Von anderer Filiale kopieren</button>
+    <button class="btn-secondary btn-sm" onclick="showAddSectionModal()">＋ Neues Untermenü</button>
+    <button id="save-btn" class="btn-primary btn-sm" onclick="saveNow()" disabled>Änderungen speichern</button>
   </div>
   <main id="menu-editor" class="menu-editor"></main>
 </div>
@@ -112,9 +114,39 @@
   </div>
 </div>
 
+<!-- ─── MODAL: NUEVO UNTERMENÜ ───────────────────────────── -->
+<div id="add-section-modal" class="modal-backdrop" style="display:none">
+  <div class="modal-card">
+    <div class="modal-title">Neues Untermenü</div>
+    <div class="modal-label">Name</div>
+    <input type="text" id="add-section-name" class="modal-input" placeholder="z.B. Vorspeisen">
+    <div class="modal-label">Reihenfolge (Position)</div>
+    <input type="number" id="add-section-order" class="modal-input" min="1" value="1">
+    <div class="modal-hint">Position 1 = ganz oben. Wird zwischen bestehende Untermenüs eingefügt.</div>
+    <div class="modal-actions">
+      <button class="btn-ghost" onclick="closeAddSectionModal()">Abbrechen</button>
+      <button class="btn-primary" onclick="confirmAddSection()">Hinzufügen</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── MODAL: CAMBIOS SIN GUARDAR ───────────────────────── -->
+<div id="unsaved-modal" class="modal-backdrop" style="display:none">
+  <div class="modal-card">
+    <div class="modal-title">Ungespeicherte Änderungen</div>
+    <div class="modal-text">Du hast Änderungen, die noch nicht gespeichert wurden. Was möchtest du tun?</div>
+    <div class="modal-actions modal-actions-column">
+      <button class="btn-primary" onclick="unsavedSaveAndLeave()">Speichern &amp; Zurück</button>
+      <button class="btn-danger" onclick="unsavedDiscardAndLeave()">Verwerfen &amp; Zurück</button>
+      <button class="btn-ghost" onclick="closeUnsavedModal()">Abbrechen</button>
+    </div>
+  </div>
+</div>
+
 <!-- ─── TOAST ─────────────────────────────────────────────── -->
 <div id="toast" class="toast"></div>
 
-<script type="module" src="admin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
+<script type="module" src="main.js"></script>
 </body>
 </html>
