@@ -103,6 +103,19 @@ body {
   color: var(--green);
   line-height: 1;
 }
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+.header-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+.btn-logout { margin-left: auto; }
 .brand-sub { color: var(--text-muted); font-size: 16px; }
 
 .editor-title-wrap { flex: 1; display: flex; align-items: center; gap: 8px; min-width: 0; }

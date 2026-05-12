@@ -20,6 +20,14 @@ body {
   min-height: 100vh;
 }
 
+#menu-app {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+  background: var(--cream);
+  box-shadow: 0 0 40px rgba(90,50,23,.08);
+}
+
 /* ─── ESTADOS ────────────────────────────────────────────── */
 .state-screen {
   min-height: 100vh;
@@ -48,6 +56,15 @@ body {
 .state-text  { font-size: 16px; color: var(--text-muted); }
 
 /* ─── HEADER ─────────────────────────────────────────────── */
+.header-logo-img {
+  width: 160px;
+  max-width: 60%;
+  height: auto;
+  display: block;
+  margin: 0 auto 14px;
+  position: relative;
+}
+
 header {
   background: var(--brown);
   padding: 38px 24px 29px;
@@ -217,7 +234,6 @@ main { padding: 0 0 60px; }
   font-size: 18px;
   color: var(--text);
   line-height: 1.2;
-  text-transform: uppercase;
 }
 .item-desc    { font-size: 15px; color: var(--text-muted); line-height: 1.4; margin-bottom: 4px; }
 .item-desc-fr { font-size: 14px; color: #bbb; font-style: italic; line-height: 1.3; }
@@ -242,6 +258,77 @@ main { padding: 0 0 60px; }
   font-weight: 700;
   color: #fff;
   background: var(--tag-color, #80BA27);
+}
+
+/* ─── LEYENDA STICKY DERECHA ────────────────────────────── */
+.legend-sticky {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px 6px;
+  background: var(--brown);
+  border-radius: 12px 0 0 12px;
+  box-shadow: -2px 2px 12px rgba(90,50,23,.18);
+  overflow: hidden;
+  transition: padding .25s ease;
+}
+
+.legend-item-sticky {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  cursor: default;
+  overflow: hidden;
+}
+
+.legend-label {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  transition: max-width .3s ease, opacity .3s ease, margin .3s ease;
+  margin-right: 0;
+}
+
+.legend-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* Expandir al hover (desktop) */
+.legend-sticky:hover {
+  padding: 10px 12px 10px 14px;
+}
+.legend-sticky:hover .legend-label {
+  max-width: 90px;
+  opacity: 1;
+  margin-right: 8px;
+}
+
+/* Expandir al toque (móvil) */
+.legend-sticky.expanded {
+  padding: 10px 12px 10px 14px;
+}
+.legend-sticky.expanded .legend-label {
+  max-width: 90px;
+  opacity: 1;
+  margin-right: 8px;
 }
 
 /* ─── FOOTER ─────────────────────────────────────────────── */

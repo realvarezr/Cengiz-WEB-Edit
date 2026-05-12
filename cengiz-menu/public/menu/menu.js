@@ -53,7 +53,7 @@ function renderMenu(data) {
           <div class="menu-item">
             <div class="item-left">
               <div class="item-name-row">
-                <span class="item-name">${item.name}</span>
+                <span class="item-name">${toUpperDE(item.name)}</span>
                 ${tagBadge(item.tag)}
               </div>
               ${item.desc   ? `<div class="item-desc">${item.desc}</div>`       : ''}
@@ -68,10 +68,23 @@ function renderMenu(data) {
 
   document.getElementById('loading-state').style.display = 'none';
   document.getElementById('menu-app').style.display      = 'block';
+
+  // Sticky legend: toggle on touch (mobile)
+  const legendSticky = document.getElementById('legend-sticky');
+  if (legendSticky) {
+    legendSticky.addEventListener('touchstart', () => {
+      legendSticky.classList.toggle('expanded');
+    }, { passive: true });
+  }
 }
 
 function fixTitle(title) {
   return (title || '').replace(/Süsses/g, 'Süßes');
+}
+
+// Mayúsculas preservando ß (no lo convierte a SS)
+function toUpperDE(str) {
+  return (str || '').replace(/./gu, c => c === 'ß' ? 'ß' : c.toLocaleUpperCase('de'));
 }
 
 function tagBadge(tag) {
