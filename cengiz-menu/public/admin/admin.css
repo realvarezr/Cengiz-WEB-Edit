@@ -43,28 +43,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--brown-dark);
+  background: linear-gradient(160deg, #3e2010 0%, #7B4A2D 60%, #a0622a 100%);
 }
 
 .login-card {
   background: var(--panel);
-  border-radius: 16px;
+  border-radius: 20px;
+  border-top: 4px solid var(--yellow);
   padding: 52px 48px;
   width: 420px;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 4px 16px rgba(0,0,0,0.2);
 }
 
-.login-logo {
-  font-size: 36px;
-  font-weight: 800;
-  color: var(--brown);
-  text-align: center;
-  letter-spacing: -1.5px;
-  line-height: 1;
-  text-transform: uppercase;
+.login-logo-img {
+  width: 160px;
+  max-width: 70%;
+  display: block;
+  margin: 0 auto 4px;
+  opacity: 0.92;
 }
 
 .login-subtitle {
@@ -100,6 +99,28 @@ body {
   min-height: 20px;
   font-weight: 500;
 }
+
+#login-btn {
+  background: var(--brown);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .2s, transform .1s, box-shadow .2s;
+  box-shadow: 0 4px 14px rgba(62,32,16,.35);
+}
+#login-btn:hover {
+  background: var(--brown-dark);
+  box-shadow: 0 6px 18px rgba(62,32,16,.45);
+}
+#login-btn:active { transform: scale(0.98); box-shadow: none; }
 
 /* â”€â”€â”€ HEADER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .app-header {
@@ -627,10 +648,33 @@ body {
     height: auto;
     min-height: 64px;
     flex-wrap: wrap;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 16px;
   }
   .editor-title-wrap { min-width: 100%; }
   .save-indicator { min-width: 0; text-align: left; }
   .modal-card { width: min(440px, 94vw); }
+
+  .home-main { padding: 20px 16px; }
+  .home-toolbar { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .home-actions { flex-wrap: wrap; width: 100%; }
+  .home-actions > * { flex: 1; min-width: 140px; text-align: center; }
+
+  .editor-toolbar { padding: 10px 16px; gap: 8px; }
+  .menu-editor { padding: 12px 0 80px; }
+  .cat-block { overflow-x: auto; -webkit-overflow-scrolling: touch; padding: 0 16px; }
+  .menu-table { min-width: 560px; }
+  .cat-title-row { padding: 8px 0; }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    width: calc(100vw - 32px);
+    padding: 36px 24px;
+  }
+  .login-logo-img { width: 130px; }
+  .login-subtitle { letter-spacing: 1.5px; }
+
+  .btn-sm { font-size: 12px !important; padding: 6px 10px !important; }
+  .editor-meta { font-size: 12px; gap: 8px; }
+  .modal-card { padding: 24px 20px; }
 }
