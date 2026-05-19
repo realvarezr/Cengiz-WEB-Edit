@@ -1,0 +1,215 @@
+<div class="kg-form-wrapper">
+
+  <form id="test-form" class="kg-form" novalidate>
+   
+    <h2 class="kg-title1">Kindergeburtstag Anfrage</h2>
+
+    <p class="kg-subtitle-text">
+      Wir freuen uns, dass Du Deinen Kindergeburtstag in unserer Schwimmbadgastronomie feiern möchtest.
+      Bitte gib alle relevanten Informationen an, damit wir Deinen besonderen Tag perfekt planen können.
+      <br><strong>Anfrage mindestens 72 Stunden vorab senden.</strong>
+    </p>
+
+    <!-- =====================
+         BASISDATEN
+    ====================== -->
+
+    <div class="kg-grid">
+
+      <div class="kg-field">
+        <label>Name des Geburtstagskindes *</label>
+        <input type="text" name="child_name" required>
+      </div>
+
+      <div class="kg-field">
+        <label>Geburtsdatum des Kindes *</label>
+        <input type="date" name="child_birthdate" required>
+      </div>
+
+      <div class="kg-field">
+        <label>Schwimmbad – Filiale *</label>
+        <select name="filiale" required>
+          <option value="">Bitte wählen</option>
+          <option>Offenburg</option>
+          <option>Denzlingen</option>
+          <option>Ettlingen</option>
+          <option>Hausach</option>
+          <option>Bühl</option>
+          <option>Freiburg Haslach</option>
+          <option>Freiburg Westbad</option>
+        </select>
+      </div>
+
+      <div class="kg-field">
+        <label>Telefon *</label>
+        <input type="tel" name="phone" required>
+      </div>
+
+      <div class="kg-field">
+        <label>E-Mail *</label>
+        <input type="email" name="email" required>
+      </div>
+
+      <div class="kg-field">
+        <label>Datum der Feier *</label>
+        <input type="date" name="event_date" required>
+      </div>
+
+      <div class="kg-field">
+        <label>Zeitblock *</label>
+        <select name="event_block" required>
+          <option value="">Bitte wählen</option>
+          <option value="11:30-14:00">11:30 – 14:00</option>
+          <option value="14:30-17:00">14:30 – 17:00</option>
+          <option value="17:30-20:00">17:30 – 20:00</option>
+        </select>
+      </div>
+
+      <div class="kg-field">
+        <label>Anzahl der Kinder *</label>
+        <input type="number" name="children_count" min="1" required>
+      </div>
+
+      <div class="kg-field">
+        <label>Anzahl der Erwachsenen</label>
+        <input type="number" name="adults_count" min="0">
+      </div>
+
+      <div class="kg-field kg-full">
+        <label>Paket</label>
+        <select name="package" required>
+          <option value="">Bitte wählen</option>
+          <option>Piraten Paket für 6 Kinder (99 €, 16,50 € pro weiteres Kind)</option>
+          <option>Meerjungfrauen Paket für 6 Kinder (99 €, 16,50 € pro weiteres Kind)</option>
+          <option>Wasserspaß Paket für 6 Kinder (115 €, 19 € pro weiteres Kind) </option>
+        </select>
+      
+      </div>
+      <p class="kg-Notice">
+      Pflichtfelder *
+    </p>
+
+    </div>
+
+    
+
+    <!-- =====================
+         ESSEN (OPTIONAL)
+    ====================== -->
+
+    <h3 class="kg-section-title">
+      🍽 Individuelle Essensauswahl (optional) Bitte beachten Sie, dass der Tisch nur für die Essenszeit reserviert wird (max. 2,5 Std.)
+    </h3>
+
+    <h4 class="kg-subsection-title">
+      Hauptspeisen-Auswahl (1 Portion pro Person)
+    </h4>
+
+    <div class="kg-grid">
+
+      <div class="kg-field">
+        <label>Grillwurst mit Pommes</label>
+        <input type="number" name="food_grillwurst" min="0" value="0">
+      </div>
+
+      <div class="kg-field">
+        <label>6er Chicken Nuggets mit Pommes</label>
+        <input type="number" name="food_nuggets" min="0" value="0">
+      </div>
+
+      <div class="kg-field">
+        <label>Currywurst mit Pommes</label>
+        <input type="number" name="food_currywurst" min="0" value="0">
+      </div>
+
+    </div>
+
+    <!-- DESSERT -->
+    <h4 class="kg-subsection-title">
+      Dessert-Auswahl (1 Stück pro Person)
+    </h4>
+
+    <div class="kg-grid">
+
+      <div class="kg-field">
+        <label>Muffin Oreo</label>
+        <input type="number" name="dessert_muffin_oreo" min="0" value="0">
+      </div>
+
+      <div class="kg-field">
+        <label>Muffin Milka</label>
+        <input type="number" name="dessert_muffin_milka" min="0" value="0">
+      </div>
+
+      <div class="kg-field">
+        <label>Donut Oreo</label>
+        <input type="number" name="dessert_donut_oreo" min="0" value="0">
+      </div>
+
+      <div class="kg-field">
+        <label>Donut Milka</label>
+        <input type="number" name="dessert_donut_milka" min="0" value="0">
+      </div>
+
+      <div class="kg-field">
+        <label>Donut pink mit Streuseln</label>
+        <input type="number" name="dessert_donut_pink" min="0" value="0">
+      </div>
+
+    </div>
+
+    <!-- ALTERNATIVE -->
+    <h4 class="kg-subsection-title">
+      Alternativ zu Muffin oder Donuts – 1 Eistorte für eine Gruppe
+      <small>(ca. 6-8 Kinder je Torte)</small>
+    </h4>
+
+    <div class="kg-grid">
+
+      <div class="kg-field">
+        <label>Eistorte Bubblegum Geschmack (7 €+, je Torte)</label>
+        <input type="number" name="bistorte_bubblegum" min="0" value="0">
+      </div>
+
+     <!--TEMPORÄR DEAKTIVIERT – Eistorte aktuell nicht verfügbar -->
+      
+      <div class="kg-field kg-hidden">
+        <label>Eistorte Tutti Frutti Geschmack (7 €+, je Torte)</label>
+        <input type="number" name="bistorte_tutti_frutti" min="0" value="0">
+      </div>
+
+    </div>
+
+    <!-- EXTRAS -->
+    <h4 class="kg-subsection-title">
+      Extras
+    </h4>
+
+    <div class="kg-grid">
+
+      <div class="kg-field">
+        <label>Süßigkeiten Wundertüte (2,00 € pro Tüte)</label>
+        <input type="number" name="extra_wundertuete" min="0" value="0">
+      </div>
+
+    </div>
+
+    <!-- DATENSCHUTZ -->
+    <div class="kg-field kg-full">
+      <label>
+          Ich habe die <a href="/datenschutz" target="_blank">Datenschutzerklärung</a> gelesen und akzeptiere sie. *
+        <input type="checkbox" name="datenschutz" value="1" required>
+        
+      </label>
+    </div>
+
+    <!-- SUBMIT -->
+    <button type="submit" class="kg-submit">
+      Anfrage absenden
+    </button>
+
+    <p id="result" class="kg-result"></p>
+
+  </form>
+
+</div>

@@ -1,0 +1,292 @@
+/* ====== KONTAKTFORMULAR CSS ====== */
+/* CONTENEDOR GENERAL */
+.kg-form-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* FORMULARIO */
+.kg-form {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  font-family: inherit;
+	
+}
+
+/* TITULO */
+.kg-title1 {
+  text-align: center;
+  margin-bottom: 10px;
+	font-size: 30px;
+	color: #5A3217;
+	font-weight: 600
+	
+}
+
+/* SUBTITULO */
+.kg-form .kg-subtitle-text  {
+	color: #5A3217;
+	font-size:18px;
+	text-align: center;
+}
+
+/*PFLICHTFELDER*/
+.kg-Notice {
+	text-align : left;
+	margin-bottom: 18px;
+	font-size: 14px;
+	color: #5A3217;
+	font-weight: 600;
+}
+
+/* GRID */
+.kg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* CAMPOS */
+.kg-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.kg-field label {
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+/* INPUTS */
+.kg-field input,
+.kg-field select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* CAMPO QUE OCUPA TODA LA FILA */
+.kg-full {
+  grid-column: span 2;
+	
+}
+
+/* BOTÓN */
+.kg-submit {
+  margin-top: 20px;
+  width: 100%;
+	padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #c9a74a;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.kg-submit:hover {
+  background: #b8963f;
+}
+
+/* MENSAJE RESULTADO */
+.kg-result {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* ====== TITULOS DE SECCIONES (ESSEN) ====== */
+
+.kg-section-title {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #032F55;
+  border-bottom: 3px solid #eed521;
+  padding-bottom: 8px;
+}
+
+.kg-subsection-title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0669B2;
+  background: #f6f8fb;
+  padding: 10px 14px;
+  border-left: 6px solid #0669B2;
+  border-radius: 4px;
+}
+
+.kg-subsection-title small {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* ====== ESPACIADO ENTRE BLOQUES ====== */
+
+.kg-subsection-title + .kg-grid {
+  margin-bottom: 25px;
+}
+/* MARCAR CAMPOS OBLIGATORIOS CON ERROR */
+.kg-error{
+  border:2px solid #d63638 !important;
+  background-color:#fff5f5;
+}
+
+
+/* 📱 RESPONSIVE */
+/* =====================================
+   HANDY / MOBILE FIX REAL
+   Basado en tu HTML exacto
+   ===================================== */
+
+@media (max-width: 768px) {
+
+  .kg-form-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .kg-form-wrapper .kg-form {
+    width: 100% !important;
+    padding: 16px !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  .kg-form-wrapper .kg-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .kg-form-wrapper .kg-full {
+    grid-column: span 1 !important;
+  }
+
+  .kg-form-wrapper .kg-form h2 {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    margin-bottom: 12px !important;
+  }
+
+  .kg-form-wrapper .kg-form .kg-subtitle-text {
+    display: block !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    color: #5A3217 !important;
+    font-weight: 400 !important;
+    margin: 0 0 18px 0 !important;
+    padding: 0 !important;
+  }
+
+  .kg-form-wrapper .kg-form .kg-section-title {
+    font-size: 18px !important;
+    line-height: 1.35 !important;
+		color: #032F55;
+    margin-top: 28px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .kg-form-wrapper .kg-form .kg-subsection-title {
+    font-size: 18px !important;
+    line-height: 1.4 !important;
+    margin-top: 20px !important;
+    margin-bottom: 12px !important;
+    padding: 10px 12px !important;
+  }
+
+  .kg-form-wrapper .kg-field label {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .kg-form-wrapper .kg-field input,
+  .kg-form-wrapper .kg-field select {
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 12px !important;
+    font-size: 16px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .kg-form-wrapper .kg-Notice {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    margin-top: -4px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .kg-form-wrapper .kg-submit {
+    width: 100% !important;
+    padding: 16px !important;
+    font-size: 16px !important;
+    border-radius: 10px !important;
+    margin-top: 20px !important;
+  }
+
+  .kg-form-wrapper .kg-result {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    margin-top: 14px !important;
+  }
+
+	
+}
+  
+
+
+/* =====================================
+   EXTRA SMALL DEVICES
+   ===================================== */
+
+@media (max-width: 480px) {
+
+  .kg-form-wrapper {
+    padding: 1px !important;
+  }
+
+  .kg-form-wrapper .kg-form {
+    padding: 10px !important;
+  }
+
+  .kg-form-wrapper .kg-form h2 {
+    font-size: 18px !important;
+  }
+
+  .kg-form-wrapper .kg-form .kg-subtitle-text {
+    font-size: 14px !important;
+		
+  }
+
+  .kg-form-wrapper .kg-form .kg-section-title {
+    font-size: 14px !important;
+  }
+
+  .kg-form-wrapper .kg-form .kg-subsection-title {
+    font-size: 12px !important;
+  }
+}
+}
+
+
